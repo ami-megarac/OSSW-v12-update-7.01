@@ -1,0 +1,38 @@
+diff -Naur linux_old/net/ipv6/addrconf.c linux/net/ipv6/addrconf.c
+--- linux_old/net/ipv6/addrconf.c	2023-06-27 19:23:55.497576850 +0530
++++ linux/net/ipv6/addrconf.c	2023-06-27 19:26:00.685408833 +0530
+@@ -214,7 +214,7 @@
+ 	.rtr_probe_interval	= 60 * HZ,
+ #ifdef CONFIG_IPV6_ROUTE_INFO
+ 	.accept_ra_rt_info_min_plen = 0,
+-	.accept_ra_rt_info_max_plen = 0,
++	.accept_ra_rt_info_max_plen = 128,
+ #endif
+ #endif
+ 	.proxy_ndp		= 0,
+@@ -268,7 +268,7 @@
+ 	.rtr_probe_interval	= 60 * HZ,
+ #ifdef CONFIG_IPV6_ROUTE_INFO
+ 	.accept_ra_rt_info_min_plen = 0,
+-	.accept_ra_rt_info_max_plen = 0,
++	.accept_ra_rt_info_max_plen = 128,
+ #endif
+ #endif
+ 	.proxy_ndp		= 0,
+diff -Naur linux_old/net/ipv6/exthdrs_core.c linux/net/ipv6/exthdrs_core.c
+--- linux_old/net/ipv6/exthdrs_core.c	2023-06-27 19:23:55.497576850 +0530
++++ linux/net/ipv6/exthdrs_core.c	2023-06-27 19:25:32.558652666 +0530
+@@ -260,6 +260,13 @@
+ 					*fragoff = _frag_off;
+ 				break;
+ 			}
++			/*When target header not to be found and First Fragment is received, we let frag_protocol handler
++			 * handle packet, error checking will be done there
++			 */
++			else if((!_frag_off) && (target < 0))
++			{
++				return nexthdr;
++			}
+ 			hdrlen = 8;
+ 		} else if (nexthdr == NEXTHDR_AUTH) {
+ 			if (flags && (*flags & IP6_FH_F_AUTH) && (target < 0))

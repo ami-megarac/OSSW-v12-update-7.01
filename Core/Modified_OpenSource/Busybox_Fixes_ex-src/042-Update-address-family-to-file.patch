@@ -1,0 +1,24 @@
+--- busybox_old/networking/ifupdown.c	2024-10-28 18:56:51.721003709 +0530
++++ busybox/networking/ifupdown.c	2024-10-28 18:57:54.637439967 +0530
+@@ -1101,12 +1101,21 @@
+ 
+ static int iface_up(struct interface_defn_t *iface)
+ {
++	const char *addr_family = "/tmp/address_family";
++	FILE *fp = fopen(addr_family, "w");
++	if (fp != NULL) {
++	    fprintf(fp, "%s",iface->address_family->name);
++	    fclose(fp);
++	}
++
+ 	if (!iface->method->up(iface, check)) return -1;
+ 	set_environ(iface, "start", "pre-up");
+ 	if (!execute_all(iface, "pre-up")) return 0;
+ 	if (!iface->method->up(iface, doit)) return 0;
+ 	set_environ(iface, "start", "post-up");
+ 	if (!execute_all(iface, "up")) return 0;
++
++	remove(addr_family);
+ 	return 1;
+ }
+ 

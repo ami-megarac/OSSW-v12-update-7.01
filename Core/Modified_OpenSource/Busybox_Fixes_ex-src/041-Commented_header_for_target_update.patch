@@ -1,0 +1,32 @@
+From caefa0bf4047e145ba6b6f0bb13580204b9eed98 Mon Sep 17 00:00:00 2001
+From: santhoshs <santhoshs@ami.com>
+Date: Fri, 7 Jun 2024 16:18:10 +0530
+Subject: [PATCH] Commented header for target update
+
+Signed-off-by: santhoshs <santhoshs@ami.com>
+---
+ util-linux/umount.c | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/util-linux/umount.c b/util-linux/umount.c
+index 1a6d27e..9ed27f8 100644
+--- a/util-linux/umount.c
++++ b/util-linux/umount.c
+@@ -36,10 +36,10 @@
+ #include <sys/utsname.h>
+ #undef TRUE
+ #undef FALSE
+-#include <rpc/rpc.h>
+-#include <rpc/xdr.h>
+-#include <rpc/pmap_prot.h>
+-#include <rpc/pmap_clnt.h>
++//#include <rpc/rpc.h>
++//#include <rpc/xdr.h>
++//#include <rpc/pmap_prot.h>
++//#include <rpc/pmap_clnt.h>
+ 
+ struct globals {
+ #if ENABLE_FEATURE_MOUNT_NFS
+-- 
+2.43.2
+

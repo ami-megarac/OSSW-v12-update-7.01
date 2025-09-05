@@ -1,0 +1,11 @@
+--- uboot/drivers/net/ftgmac100.c	2023-05-29 11:01:52.570103324 +0800
++++ uboot-new/drivers/net/ftgmac100.c	2023-05-30 14:36:03.943476182 +0800
+@@ -475,7 +475,7 @@
+ 		return -EPERM;
+ 	}
+ 
+-	debug("%s(%x, %x)\n", __func__, (int)packet, length);
++	debug("%s(%p, %x)\n", __func__, packet, length);
+ 
+ 	length = (length < ETH_ZLEN) ? ETH_ZLEN : length;
+ 

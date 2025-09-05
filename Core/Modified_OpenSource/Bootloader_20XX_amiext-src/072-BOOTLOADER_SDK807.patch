@@ -1,0 +1,27 @@
+diff -Naur Q/arch/arm/dts/ast2500-evb.dts P/arch/arm/dts/ast2500-evb.dts
+--- Q/arch/arm/dts/ast2500-evb.dts	2023-12-20 12:41:37.683177803 +0530
++++ P/arch/arm/dts/ast2500-evb.dts	2023-12-20 12:40:30.530257790 +0530
+@@ -16,6 +16,23 @@
+ 		spi0 = &fmc;
+ 		ethernet0 = &mac0;
+ 		ethernet1 = &mac1;
++
++		/*
++	 * reserved-memory layout
++	 * 0x8a00_0000 ~ 0x8a00_FFFF is reserved for mctp controller in linux side.
++	 */
++	 reserved-memory {
++
++		#address-cells = <1>;
++		#size-cells = <1>;
++		ranges;
++
++		mctp_reserved: mctp_reserved@8a000000 {
++			reg = <0x8a000000 0x10000>;
++			no-map;
++		};
++	};
++
+ 	};
+ };
+ 

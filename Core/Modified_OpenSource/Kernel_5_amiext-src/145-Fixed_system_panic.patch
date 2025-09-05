@@ -1,0 +1,25 @@
+diff -Naur A/drivers/net/ethernet/faraday/ftgmac100.c  B/drivers/net/ethernet/faraday/ftgmac100.c
+--- A/drivers/net/ethernet/faraday/ftgmac100.c	2023-12-21 10:50:18.504920564 +0530
++++ B/drivers/net/ethernet/faraday/ftgmac100.c	2023-12-21 10:55:50.608338993 +0530
+@@ -116,7 +116,7 @@
+ 	bool aneg_pause;
+ 
+ 	/* Misc */
+-	bool need_mac_restart;
++	volatile bool need_mac_restart;
+ 	bool is_aspeed;
+ };
+ 
+@@ -1758,8 +1758,10 @@
+ 		return;
+ 
+ 	phy_disconnect(netdev->phydev);
+-	mdiobus_unregister(priv->mii_bus);
+-	mdiobus_free(priv->mii_bus);
++	if (priv->mii_bus) {
++		mdiobus_unregister(priv->mii_bus);
++		mdiobus_free(priv->mii_bus);
++	}
+ }
+ #if 0 //Marked for ignore open source NCSI 
+ static void ftgmac100_ncsi_handler(struct ncsi_dev *nd)
