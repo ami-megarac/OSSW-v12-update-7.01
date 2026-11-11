@@ -1,0 +1,117 @@
+Format: 1.8
+Date: Wed, 07 Oct 2026 14:35:07 +0200
+Source: python3.11
+Binary: idle-python3.11 libpython3.11 libpython3.11-dbg libpython3.11-dev libpython3.11-minimal libpython3.11-stdlib libpython3.11-testsuite python3.11 python3.11-dbg python3.11-dev python3.11-doc python3.11-examples python3.11-full python3.11-minimal python3.11-nopie python3.11-venv
+Architecture: all armel
+Version: 3.11.2-6+deb12u9
+Distribution: bookworm-security
+Urgency: medium
+Maintainer: Matthias Klose <doko@debian.org>
+Changed-By: Andrej Shadura <andrewsh@debian.org>
+Description:
+ idle-python3.11 - IDE for Python (v3.11) using Tkinter
+ libpython3.11 - Shared Python runtime library (version 3.11)
+ libpython3.11-dbg - Debug Build of the Python Interpreter (version 3.11)
+ libpython3.11-dev - Header files and a static library for Python (v3.11)
+ libpython3.11-minimal - Minimal subset of the Python language (version 3.11)
+ libpython3.11-stdlib - Interactive high-level object-oriented language (standard library
+ libpython3.11-testsuite - Testsuite for the Python standard library (v3.11)
+ python3.11 - Interactive high-level object-oriented language (version 3.11)
+ python3.11-dbg - Debug Build of the Python Interpreter (version 3.11)
+ python3.11-dev - Header files and a static library for Python (v3.11)
+ python3.11-doc - Documentation for the high-level object-oriented language Python
+ python3.11-examples - Examples for the Python language (v3.11)
+ python3.11-full - Python Interpreter with complete class library (version 3.11)
+ python3.11-minimal - Minimal subset of the Python language (version 3.11)
+ python3.11-nopie - Python interpreter linked without PIE (version 3.11)
+ python3.11-venv - Interactive high-level object-oriented language (pyvenv binary, v
+Closes: 1131896
+Changes:
+ python3.11 (3.11.2-6+deb12u9) bookworm-security; urgency=medium
+ .
+   * Non-maintainer upload by the LTS Team.
+   * Apply upstream patches for the following CVEs:
+     - CVE-2025-69534: Treat invalid markup declarations in
+       html.parser.HTMLParser as bogus comments instead of raising
+       AssertionError (Closes: #1131896)
+     - CVE-2026-1502: Reject CR/LF in HTTP tunnel request headers
+     - CVE-2026-3276: Fix O(n^2) canonical ordering in unicodedata.normalize()
+     - CVE-2026-6019: Percent-encode the cookie embedded in JavaScript by
+       http.cookies.Morsel.js_output() and decode it with decodeURIComponent()
+     - CVE-2026-8328: Apply CVE-2021-4189 PASV fix to ftplib.ftpcp()
+     - CVE-2026-9669: Prevent bz2 decompressor reuse after errors
+     - CVE-2026-15308: Accumulate data passed to html.parser.HTMLParser.feed()
+       and only parse again once the unparsed buffer has doubled
+     - CVE-2026-15310: Bound zipfile decompression for bzip2/LZMA/Zstandard
+     - CVE-2026-15806: Scope HTTPPasswordMgr credentials by URL scheme
+     - CVE-2026-17084: Don't consider Unicode codepoint attributes outside
+       RFC 3454
+     - CVE-2026-18503: Match quoted fields in csv.Sniffer.sniff() without
+       backtracking (fixes quadratic time)
+     - CVE-2026-19445: Do not call the servername callback through a released
+       SSLContext (fixes use-after-free)
+     - CVE-2026-19553: Validate SSLContext.wrap_bio() parameters like
+       wrap_socket(). Raise a DeprecationWarning instead of ValueError.
+   * Apply further upstream patches the ones above depend on:
+     - gh-100061, gh-106052: Fix bug in the matching of possessive
+       quantifiers: restore the global Input Stream pointer after trying to
+       match a sub-pattern
+     - gh-135661: Fix parsing start and end tags in HTMLParser according to
+       the HTML5 standard. Includes test.support.subTests() used by the test
+       for CVE-2026-17084.
+   * Match whole fields when detecting doubled quotes in csv.Sniffer.sniff()
+     preventing exponential backtracking (gh-109638).
+Checksums-Sha1:
+ 62affc6c13020d6d11b32e4faba1ab586bc15620 359300 idle-python3.11_3.11.2-6+deb12u9_all.deb
+ 8c94835644dbc40eb2473c45a3a22c4eda600b2e 15808356 libpython3.11-dbg_3.11.2-6+deb12u9_armel.deb
+ a8a733370cf820671f1900a530b65c5ed0424279 2948888 libpython3.11-dev_3.11.2-6+deb12u9_armel.deb
+ a93ee7c0230d6cd9fbe793af7d550cce1438ff79 805356 libpython3.11-minimal_3.11.2-6+deb12u9_armel.deb
+ f8baf7e4c0a26e86a75a68d89e85693f6574f64b 1665536 libpython3.11-stdlib_3.11.2-6+deb12u9_armel.deb
+ d4f67a463690dc90c5a5541a2f8a9a53180d7fe0 3374756 libpython3.11-testsuite_3.11.2-6+deb12u9_all.deb
+ 3fb9e2a5d5543552b5daa6d49a42a2de57f3f73f 1680776 libpython3.11_3.11.2-6+deb12u9_armel.deb
+ 34487c2f9477b4e2a960ed7c22ba50bb73abd0e9 38242788 python3.11-dbg_3.11.2-6+deb12u9_armel.deb
+ 519a96b321937b1ec351592549bdb5c22cdc7000 500640 python3.11-dev_3.11.2-6+deb12u9_armel.deb
+ 4d19b8c911db9a262e45c6e91a63829365445745 12644052 python3.11-doc_3.11.2-6+deb12u9_all.deb
+ 14981eac45ba55f4683862ba4caa7d3accdb54bb 799940 python3.11-examples_3.11.2-6+deb12u9_all.deb
+ e660708dbc6e95b9d95f7ef568e18d9b2bad74f1 1292 python3.11-full_3.11.2-6+deb12u9_armel.deb
+ 02d5a4ea406ab34d7b3f9eb0cae741a950e9fb8b 1681780 python3.11-minimal_3.11.2-6+deb12u9_armel.deb
+ 337b4f518afae17d358413fd39c7701b1160166a 1671540 python3.11-nopie_3.11.2-6+deb12u9_armel.deb
+ cd7cc5663d83f7ee3ec35afd46a4bc37d848ba7f 5896 python3.11-venv_3.11.2-6+deb12u9_armel.deb
+ 4e73d272ba0d7da6eaac6d08c315226b756d5125 15333 python3.11_3.11.2-6+deb12u9_armel.buildinfo
+ 5adb04fd4cc597339357250f88f2263af80cc985 575032 python3.11_3.11.2-6+deb12u9_armel.deb
+Checksums-Sha256:
+ c066b167e4630e16d6aade9a4c1475a4063aec8da9d6f4a5ca9ac9d9645488fd 359300 idle-python3.11_3.11.2-6+deb12u9_all.deb
+ ac8f5216fa0f4e517dd0158586a1f4ea2eaa38bd8c2817d69bf5a91ac394c5c5 15808356 libpython3.11-dbg_3.11.2-6+deb12u9_armel.deb
+ 98bb99a9be57b75b60118f6bc59fc0d339b035427b3c84511e3d4d252316ec67 2948888 libpython3.11-dev_3.11.2-6+deb12u9_armel.deb
+ 10c8cdb4ecfe85b1763780f15ed29c85a54ebfba7d8e50cddbade88b23730d8b 805356 libpython3.11-minimal_3.11.2-6+deb12u9_armel.deb
+ 6a77175d97e70da981c68a7ec7d270995ca54926ac6fff1345c68467d5c1c571 1665536 libpython3.11-stdlib_3.11.2-6+deb12u9_armel.deb
+ 5dd0f85e950b344a51374e0ef68089e808f73c6c594c80e5232936b5c7ea4a28 3374756 libpython3.11-testsuite_3.11.2-6+deb12u9_all.deb
+ 19d7c23be7f77fa187960b3946c1bcc16744fef88329eb81ac971c1c527d5cd9 1680776 libpython3.11_3.11.2-6+deb12u9_armel.deb
+ e8bbd4fb4d85ea96d445a2a5740613fe3e87ac87cc34a339af29303cd7e9d613 38242788 python3.11-dbg_3.11.2-6+deb12u9_armel.deb
+ 32af70d308b29fa0f42be599efb75033ca54eba52c870862f1b323c802c6fc3f 500640 python3.11-dev_3.11.2-6+deb12u9_armel.deb
+ eedbfb71d066cf78cfa3bf1ed22ebe80756f74ece077b0f13314fdb93b68350f 12644052 python3.11-doc_3.11.2-6+deb12u9_all.deb
+ 370eeff2a6bdf14d062c3eb19f81236e29216e3df039cf7b73c23df26eedee45 799940 python3.11-examples_3.11.2-6+deb12u9_all.deb
+ a59135fb1ff7606a8286c4b7e4f8e2aae1f3a498383bd40185fcb854b62c9062 1292 python3.11-full_3.11.2-6+deb12u9_armel.deb
+ 2e88c7ae15a4cc66ae57063b2f31dd8fffc54d556b87c44682a79385bc2ea80c 1681780 python3.11-minimal_3.11.2-6+deb12u9_armel.deb
+ c8382b9e88149c3cdeeb2f71ae5abe56103cc438b5abdd2e81e527c11c36a026 1671540 python3.11-nopie_3.11.2-6+deb12u9_armel.deb
+ 1a9b83ded2a06e68dc5af5d184eaba9dd0f1b27af9720f8674a46d5678829005 5896 python3.11-venv_3.11.2-6+deb12u9_armel.deb
+ 0a54b4861340c8eda0a733667a5b651caa70534cbd6cfd4fc0df2bd8b30c1626 15333 python3.11_3.11.2-6+deb12u9_armel.buildinfo
+ e78749a15b8bd2cad1d6c343c303e42ef2c27f4f8e2bc13cc7eeccfcf24d6cd8 575032 python3.11_3.11.2-6+deb12u9_armel.deb
+Files:
+ 225052baa9c386da4cf0c090b54ab6a1 359300 python optional idle-python3.11_3.11.2-6+deb12u9_all.deb
+ 7019910188812babe8a75caf16fc8f9c 15808356 debug optional libpython3.11-dbg_3.11.2-6+deb12u9_armel.deb
+ c86088fc2541cbfcbe7b4d241a80d77f 2948888 libdevel optional libpython3.11-dev_3.11.2-6+deb12u9_armel.deb
+ 5094690c84a4140d0d8b710258cd2378 805356 python optional libpython3.11-minimal_3.11.2-6+deb12u9_armel.deb
+ 6664728fe5d3b033e7e57846d08560a2 1665536 python optional libpython3.11-stdlib_3.11.2-6+deb12u9_armel.deb
+ 462cca8a3053250b7d3165ff96dfff32 3374756 libdevel optional libpython3.11-testsuite_3.11.2-6+deb12u9_all.deb
+ 7e42f0f8dfaafcff27827ba182f04d85 1680776 libs optional libpython3.11_3.11.2-6+deb12u9_armel.deb
+ 10ec090c5ff7644d233e2799cb752f25 38242788 debug optional python3.11-dbg_3.11.2-6+deb12u9_armel.deb
+ e21354aaf637fa26f925c804e13450db 500640 python optional python3.11-dev_3.11.2-6+deb12u9_armel.deb
+ 9f422d3f349ee5d486757e6f391d80b3 12644052 doc optional python3.11-doc_3.11.2-6+deb12u9_all.deb
+ 9396e6515a1bb46046b5d442ba5b889a 799940 python optional python3.11-examples_3.11.2-6+deb12u9_all.deb
+ 20fccd7fa021c088b7a108428af046eb 1292 python optional python3.11-full_3.11.2-6+deb12u9_armel.deb
+ df5a249647a6759326e1a90fce9e9faa 1681780 python optional python3.11-minimal_3.11.2-6+deb12u9_armel.deb
+ 55836e3f621832ebf58ffceb731fb54e 1671540 python optional python3.11-nopie_3.11.2-6+deb12u9_armel.deb
+ 378c76b699fc304938d0dfdcc7631d6e 5896 python optional python3.11-venv_3.11.2-6+deb12u9_armel.deb
+ 0153445ff483b6e1d3807e70e5eb838c 15333 python optional python3.11_3.11.2-6+deb12u9_armel.buildinfo
+ 751800a5f4ca97e6013712a16ec2647b 575032 python optional python3.11_3.11.2-6+deb12u9_armel.deb

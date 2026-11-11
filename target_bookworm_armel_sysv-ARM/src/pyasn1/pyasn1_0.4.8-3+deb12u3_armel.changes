@@ -1,0 +1,42 @@
+Format: 1.8
+Date: Mon, 07 Sep 2026 07:26:28 -0300
+Source: pyasn1
+Binary: python-pyasn1-doc python3-pyasn1
+Architecture: all
+Version: 0.4.8-3+deb12u3
+Distribution: bookworm-security
+Urgency: high
+Maintainer: Jan Lübbe <jluebbe@debian.org>
+Changed-By: Emmanuel Arias <eamanu@debian.org>
+Description:
+ python-pyasn1-doc - ASN.1 library for Python (documentation)
+ python3-pyasn1 - ASN.1 library for Python (Python 3 module)
+Closes: 1142388
+Changes:
+ pyasn1 (0.4.8-3+deb12u3) bookworm-security; urgency=high
+ .
+   * Non-maintainer upload by the LTS Team.
+   * CVE-2026-59884: BER/CER/DER decoder denial of service via unbounded
+     long-form tag IDs. The BER decoder accumulated tag continuation
+     octets without an upper bound, so a crafted substrate could force
+     construction of an arbitrarily large integer with quadratic CPU cost
+     (Closes: #1142388).
+   * CVE-2026-59885: fix quadratic complexity in OBJECT IDENTIFIER and
+     RELATIVE-OID decoding and encoding, which allowed denial of service
+     via a small payload with many arcs.
+   * CVE-2026-59886: uncontrolled resource consumption when converting
+     decoded real values. univ.Real convertedts  mantissa, base,
+     exponens to a Python float using exact big-integer exponentiation,
+     so a real value only a few bytes long could carry a very large exponent.
+Checksums-Sha1:
+ d1486c2cc306c2eae8a3d2c5e3f80369ab003866 6968 pyasn1_0.4.8-3+deb12u3_armel.buildinfo
+ d6373b4d378ce61dac05237fe99f95bcf675297a 135280 python-pyasn1-doc_0.4.8-3+deb12u3_all.deb
+ 86e1582a669d02ffebae0324df09cbfa19648774 63456 python3-pyasn1_0.4.8-3+deb12u3_all.deb
+Checksums-Sha256:
+ 66063bed5a619e8cf6e763125687bd438a0c8f9e1094ab4a643c0bc36f9d2913 6968 pyasn1_0.4.8-3+deb12u3_armel.buildinfo
+ bc4dc0a8f68a8310a3953aacbf4cb55be6b1234039dc61ed175b9275b75a7e17 135280 python-pyasn1-doc_0.4.8-3+deb12u3_all.deb
+ 5f6a0b9f74c5e16a8a546cab67de633c3bf785410cf72c3dad2bfedc2aff2e49 63456 python3-pyasn1_0.4.8-3+deb12u3_all.deb
+Files:
+ e03739c6c4eba6019ab0711fb62576ef 6968 python optional pyasn1_0.4.8-3+deb12u3_armel.buildinfo
+ 1bd1a16b6fbcb093a641a9f3154b07f5 135280 doc optional python-pyasn1-doc_0.4.8-3+deb12u3_all.deb
+ bf35f728036ea7ae6652919010bf1a1d 63456 python optional python3-pyasn1_0.4.8-3+deb12u3_all.deb

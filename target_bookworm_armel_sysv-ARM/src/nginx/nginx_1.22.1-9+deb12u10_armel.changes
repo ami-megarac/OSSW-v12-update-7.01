@@ -1,0 +1,113 @@
+Format: 1.8
+Date: Sat, 18 Jul 2026 16:18:45 +0000
+Source: nginx
+Binary: libnginx-mod-http-geoip libnginx-mod-http-geoip-dbgsym libnginx-mod-http-image-filter libnginx-mod-http-image-filter-dbgsym libnginx-mod-http-perl libnginx-mod-http-perl-dbgsym libnginx-mod-http-xslt-filter libnginx-mod-http-xslt-filter-dbgsym libnginx-mod-mail libnginx-mod-mail-dbgsym libnginx-mod-stream libnginx-mod-stream-dbgsym libnginx-mod-stream-geoip libnginx-mod-stream-geoip-dbgsym nginx nginx-common nginx-core nginx-dbgsym nginx-dev nginx-doc nginx-extras nginx-full nginx-light
+Architecture: armel all
+Version: 1.22.1-9+deb12u10
+Distribution: bookworm-security
+Urgency: medium
+Maintainer: Debian Nginx Maintainers <pkg-nginx-maintainers@alioth-lists.debian.net>
+Changed-By: Jan Mojžíš <janmojzis@debian.org>
+Description:
+ libnginx-mod-http-geoip - GeoIP HTTP module for Nginx
+ libnginx-mod-http-image-filter - HTTP image filter module for Nginx
+ libnginx-mod-http-perl - Perl module for Nginx
+ libnginx-mod-http-xslt-filter - XSLT Transformation module for Nginx
+ libnginx-mod-mail - Mail module for Nginx
+ libnginx-mod-stream - Stream module for Nginx
+ libnginx-mod-stream-geoip - GeoIP Stream module for Nginx
+ nginx      - small, powerful, scalable web/proxy server
+ nginx-common - small, powerful, scalable web/proxy server - common files
+ nginx-core - nginx web/proxy server (standard version)
+ nginx-dev  - nginx web/proxy server - development headers
+ nginx-doc  - small, powerful, scalable web/proxy server - documentation
+ nginx-extras - nginx web/proxy server (extended version)
+ nginx-full - nginx web/proxy server (standard version with 3rd parties)
+ nginx-light - nginx web/proxy server (basic version)
+Changes:
+ nginx (1.22.1-9+deb12u10) bookworm-security; urgency=medium
+ .
+   * d/p/CVE-2026-56434.patch add, backport fix for use-after-free when using
+     ngx_http_ssi_module (CVE-2026-56434)
+   * d/p/CVE-2026-60005.patch add, backport fix for memory disclosure
+     vulnerability when using ngx_http_slice_module (CVE-2026-60005)
+   * d/p/CVE-2026-42533.patch add, backport fix for buffer overflow
+     vulnerability when using map with regex (CVE-2026-42533)
+     A big thanks to Aron Xu for preparing the patch.
+   * d/t/nginx-dev-test.sh add, verify that nginx-dev can build and load
+     a minimal third-party dynamic HTTP module.
+Checksums-Sha1:
+ 5d1fc08e4874b92821678900ac9d5906722b280e 36852 libnginx-mod-http-geoip-dbgsym_1.22.1-9+deb12u10_armel.deb
+ 5e5d34aceaea5c284e807cd9395f620cde92d9d1 86112 libnginx-mod-http-geoip_1.22.1-9+deb12u10_armel.deb
+ 8d84d2d10e77e1688757adcf713b42d1fef8270c 44508 libnginx-mod-http-image-filter-dbgsym_1.22.1-9+deb12u10_armel.deb
+ e2b648b0b688b6b8654341a5ad121c4585ef1a36 90072 libnginx-mod-http-image-filter_1.22.1-9+deb12u10_armel.deb
+ bd5147f8b43b9b46463ed94f6ccfeebcdefd7c0e 98496 libnginx-mod-http-perl-dbgsym_1.22.1-9+deb12u10_armel.deb
+ d73dd0add48b6696ab1a2ad99fbee4f979bd22fb 95596 libnginx-mod-http-perl_1.22.1-9+deb12u10_armel.deb
+ af2c8a528cc0608df09078a3e44e7edf58bba72d 53068 libnginx-mod-http-xslt-filter-dbgsym_1.22.1-9+deb12u10_armel.deb
+ c98d6c2389b198344746afaac7bd5342a6c5935d 87316 libnginx-mod-http-xslt-filter_1.22.1-9+deb12u10_armel.deb
+ 8d4a04ef92add7683d8fcd3e09818b18f0ada562 109420 libnginx-mod-mail-dbgsym_1.22.1-9+deb12u10_armel.deb
+ 988c220aab7f67fc58bbad4d0a0203735d29c46e 115384 libnginx-mod-mail_1.22.1-9+deb12u10_armel.deb
+ 9a2bf32019aec8c926c82de34db28edc31bbc413 175640 libnginx-mod-stream-dbgsym_1.22.1-9+deb12u10_armel.deb
+ a6e9572b57287e4d351e5a9736aacdf2e33a8284 22768 libnginx-mod-stream-geoip-dbgsym_1.22.1-9+deb12u10_armel.deb
+ 07a136a1d9525bd99606d797fcf77c9c5ef1eac6 85448 libnginx-mod-stream-geoip_1.22.1-9+deb12u10_armel.deb
+ 44e9d5f13160eea8bd7ba41466edafcec60b79dc 135544 libnginx-mod-stream_1.22.1-9+deb12u10_armel.deb
+ 578032fad7db715046316362b42634dca0d6e42b 114932 nginx-common_1.22.1-9+deb12u10_all.deb
+ 83db978ba6b1149e326af3d870e1e7bd3c23ecd0 81460 nginx-core_1.22.1-9+deb12u10_all.deb
+ b502e2b19b34e13dae4abb97a8c8c1c306f65504 1107788 nginx-dbgsym_1.22.1-9+deb12u10_armel.deb
+ 11aae026211b80ba48d0a798f4dc202a4f9ca2c0 178004 nginx-dev_1.22.1-9+deb12u10_all.deb
+ 864944d09da35c80abd309a644675eb6630c46d1 89476 nginx-doc_1.22.1-9+deb12u10_all.deb
+ 6cd1be6176a3c71672aad8fbd506d6eb01828028 81700 nginx-extras_1.22.1-9+deb12u10_armel.deb
+ 486700e23e6ec30f5aefaa71c2f15a0d292832b6 81532 nginx-full_1.22.1-9+deb12u10_all.deb
+ 572fea1e803779f05c7201ae274bfda691b73eb1 81240 nginx-light_1.22.1-9+deb12u10_all.deb
+ 85f72d00ae40f61875e0990b4bf55754c901b8f6 15243 nginx_1.22.1-9+deb12u10_armel.buildinfo
+ 0c4edbb139876370c3f6e5b4d38dacc3a77c9893 465492 nginx_1.22.1-9+deb12u10_armel.deb
+Checksums-Sha256:
+ f08d6c133d2ce6a7b0168a96d25f79bf0fdc829878ad07a8c775baa61b656dce 36852 libnginx-mod-http-geoip-dbgsym_1.22.1-9+deb12u10_armel.deb
+ c8e7e2c734b90b71cc51575e3f741ae15c3844378e63a3ed2767dfe628dcb60c 86112 libnginx-mod-http-geoip_1.22.1-9+deb12u10_armel.deb
+ ef1a2ab1c2bcf64dce401885a131c17ced572ef757113ca37e314d86406da57a 44508 libnginx-mod-http-image-filter-dbgsym_1.22.1-9+deb12u10_armel.deb
+ ace91156fd90562bcb5f0aa21e3ca266fd66fb83c0a9caff487b0d9c8e27e955 90072 libnginx-mod-http-image-filter_1.22.1-9+deb12u10_armel.deb
+ 766de30a156ebfdee9c81d0244b1103fea8d46e35a96261d91a822a52ae6616c 98496 libnginx-mod-http-perl-dbgsym_1.22.1-9+deb12u10_armel.deb
+ 1a22413cb6bd4cc5f8902be1ca51f077fbfa5bd59479a02f92c9671ce17a1532 95596 libnginx-mod-http-perl_1.22.1-9+deb12u10_armel.deb
+ 4bab6bf53dd4ee10a1204d85b32a10d0f5a40ad71a3699c899c83ff8f7b0274f 53068 libnginx-mod-http-xslt-filter-dbgsym_1.22.1-9+deb12u10_armel.deb
+ 034e57541df7c80abb383b1c9802b69e9fb30d5cef1332a7969972614844d0be 87316 libnginx-mod-http-xslt-filter_1.22.1-9+deb12u10_armel.deb
+ ab7a77a5014f8c846a71afa5bc2ddd0952ab19ccbdb30a3faeb2e596600e0430 109420 libnginx-mod-mail-dbgsym_1.22.1-9+deb12u10_armel.deb
+ 8802a25735df3b0d1b2b4b0082a0c65617270ee696009864e5c07496dfc842b5 115384 libnginx-mod-mail_1.22.1-9+deb12u10_armel.deb
+ bd986bafb788eb6af44f532193cac76a2c6435b6baea92a1a2610534cb5612a6 175640 libnginx-mod-stream-dbgsym_1.22.1-9+deb12u10_armel.deb
+ a333dedc6d2bf88215c35d23cb2f36945f3586e3acbe0763b4c8fa823c5a1c8f 22768 libnginx-mod-stream-geoip-dbgsym_1.22.1-9+deb12u10_armel.deb
+ e3e42ea5f0effbbadd4b05f965fb12899c059a34f320c666d15014002a5f5f6e 85448 libnginx-mod-stream-geoip_1.22.1-9+deb12u10_armel.deb
+ 4d1b0f6743154ff57cb55f6aafcc9e1e00a1497e955e74bd1195cb76b1170c0a 135544 libnginx-mod-stream_1.22.1-9+deb12u10_armel.deb
+ 3b9e2207c67de87706c53d86ec4bed0760ed46e1401f30d078c3a926fdc2f9ee 114932 nginx-common_1.22.1-9+deb12u10_all.deb
+ 534b56a3361b4ef89787c5658301ad77b0be7b1a219f6f771fb0decd3b588710 81460 nginx-core_1.22.1-9+deb12u10_all.deb
+ 1a4b8a4ef4458174ad85452fdecd45901913d23df47693482acbe57e4d96c548 1107788 nginx-dbgsym_1.22.1-9+deb12u10_armel.deb
+ 04fe0885af8ef9ecef8b0fc34ba6d671b6fad4df3fa342eb9fda171e9ec5a404 178004 nginx-dev_1.22.1-9+deb12u10_all.deb
+ 04448fe595e0fbcd3a7afe120c4614c7be9675079f5d3e72db31290d313b84f0 89476 nginx-doc_1.22.1-9+deb12u10_all.deb
+ c2229a0016c255f79caf56d46b5bd0476e3ff2058b876db7a546f73577dc5b25 81700 nginx-extras_1.22.1-9+deb12u10_armel.deb
+ 6de3fdf962bbeeddbbd14857e1eaef3927c2dcdd6f2ab8c3ebf24dc413df66d2 81532 nginx-full_1.22.1-9+deb12u10_all.deb
+ f17d2eb8e21bb20c1a508b4b3ac7e35d0b16d5258bd5dd03be915ec7751f1f97 81240 nginx-light_1.22.1-9+deb12u10_all.deb
+ 0d354f3859e8536f93f1a1a9400dcb5c8395eacb369aea10bb56ff60307f5994 15243 nginx_1.22.1-9+deb12u10_armel.buildinfo
+ 6de3c75d080fe6a25d1cc24c0699d0fc95c63021e38bec469a35c499ef57c348 465492 nginx_1.22.1-9+deb12u10_armel.deb
+Files:
+ 2a553983b52bbd1287b18ca359ba5ed4 36852 debug optional libnginx-mod-http-geoip-dbgsym_1.22.1-9+deb12u10_armel.deb
+ c14000d82ea143ac265ec3a6bda9d7c0 86112 httpd optional libnginx-mod-http-geoip_1.22.1-9+deb12u10_armel.deb
+ 93554d10e126f0126d99b24324434dc3 44508 debug optional libnginx-mod-http-image-filter-dbgsym_1.22.1-9+deb12u10_armel.deb
+ de18b4f7d99da32908489639e3a4161a 90072 httpd optional libnginx-mod-http-image-filter_1.22.1-9+deb12u10_armel.deb
+ c43c0bda2623e35ccd02f2dc61f09d24 98496 debug optional libnginx-mod-http-perl-dbgsym_1.22.1-9+deb12u10_armel.deb
+ 2e2c15a36f63d4d2daeefe3554a45790 95596 httpd optional libnginx-mod-http-perl_1.22.1-9+deb12u10_armel.deb
+ 9b968aeb3b2da7a836216e07d8c8d031 53068 debug optional libnginx-mod-http-xslt-filter-dbgsym_1.22.1-9+deb12u10_armel.deb
+ 2151a914ffc2e2c028341e91204dd9fa 87316 httpd optional libnginx-mod-http-xslt-filter_1.22.1-9+deb12u10_armel.deb
+ 60197777be27cc49c93700a6d5ea9ae0 109420 debug optional libnginx-mod-mail-dbgsym_1.22.1-9+deb12u10_armel.deb
+ ed1786cb1bc6c50b972dadc3054f7dca 115384 httpd optional libnginx-mod-mail_1.22.1-9+deb12u10_armel.deb
+ 98ee4ea21967b0b29a3886efa6b0693f 175640 debug optional libnginx-mod-stream-dbgsym_1.22.1-9+deb12u10_armel.deb
+ 87f7e29c8781f13f5813ead42076320a 22768 debug optional libnginx-mod-stream-geoip-dbgsym_1.22.1-9+deb12u10_armel.deb
+ af4ddab1c7ec2f19deabe52e6a278ec4 85448 httpd optional libnginx-mod-stream-geoip_1.22.1-9+deb12u10_armel.deb
+ 9a25ee0191fcd86b9ed29aebf07a9175 135544 httpd optional libnginx-mod-stream_1.22.1-9+deb12u10_armel.deb
+ e2b304730c165867ed4a1fe5bf609601 114932 httpd optional nginx-common_1.22.1-9+deb12u10_all.deb
+ 78d5e2419cfab2ff2f31b593828195ff 81460 httpd optional nginx-core_1.22.1-9+deb12u10_all.deb
+ 3866836f806930989b6d89d046eac7f2 1107788 debug optional nginx-dbgsym_1.22.1-9+deb12u10_armel.deb
+ 667223f0f8c9103916eb087f215e6cda 178004 httpd optional nginx-dev_1.22.1-9+deb12u10_all.deb
+ 00fc57070533302b8166a60d65f690a5 89476 doc optional nginx-doc_1.22.1-9+deb12u10_all.deb
+ 01a27f7223688da3710b63471f7a5450 81700 httpd optional nginx-extras_1.22.1-9+deb12u10_armel.deb
+ cc4b67e9d8dae95a9574fb39a53a9d48 81532 httpd optional nginx-full_1.22.1-9+deb12u10_all.deb
+ a3b8fa733888940d89f0afeeb8040471 81240 httpd optional nginx-light_1.22.1-9+deb12u10_all.deb
+ e71416ad3de998c23b5a76927b3b5c1c 15243 httpd optional nginx_1.22.1-9+deb12u10_armel.buildinfo
+ c5b1810ac8023c5d5e5ac00fbbcbb3fc 465492 httpd optional nginx_1.22.1-9+deb12u10_armel.deb

@@ -1,0 +1,77 @@
+Format: 1.8
+Date: Tue, 29 Sep 2026 08:59:07 +0700
+Source: perl
+Binary: libperl-dev libperl5.36 perl perl-base perl-debug perl-doc perl-modules-5.36
+Architecture: armel all
+Version: 5.36.0-7+deb12u4
+Distribution: bookworm-security
+Urgency: high
+Maintainer: Niko Tyni <ntyni@debian.org>
+Changed-By: Arnaud Rebillout <arnaudr@debian.org>
+Description:
+ libperl-dev - Perl library: development files
+ libperl5.36 - shared Perl library
+ perl       - Larry Wall's Practical Extraction and Report Language
+ perl-base  - minimal Perl system
+ perl-debug - debug-enabled Perl interpreter
+ perl-doc   - Perl documentation
+ perl-modules-5.36 - Core Perl modules
+Closes: 1137345 1138854 1138856 1138858 1138859 1138860 1138863 1138905 1138906 1140152 1141639 1142037 1144668
+Changes:
+ perl (5.36.0-7+deb12u4) bookworm-security; urgency=high
+ .
+   * Non-maintainer upload by the LTS Team.
+   * [SECURITY] various upstream fixes:
+     + CVE-2026-7017: HTTP::Tiny credential forwarding on redirects.
+         (Closes: #1141639)
+     + CVE-2026-42496: Archive::Tar symlink extraction.
+         (Closes: #1138860)
+     + CVE-2026-42497: Archive::Tar hardlink extraction.
+         (Closes: #1138859)
+     + CVE-2026-12087: Socket: pack_ip_mreq_source() out-of-bounds heap read.
+         (Closes: #1140152)
+     + CVE-2026-13221: silently incorrect regular expression matches.
+         (Closes: #1142037)
+     + CVE-2025-15649: header parsing in IO::Uncompress::Unzip.
+         (Closes: #1138863)
+     + CVE-2026-7010:  CRLF-validation in HTTP::Tiny.
+         (Closes: #1138858)
+     + CVE-2026-8376:  Buffer overflow in Perl_study_chunk.
+         (Closes: #1137345)
+     + CVE-2026-48959: CPU exhaustion in IO::Uncompress::Unzip.
+         (Closes: #1138856)
+     + CVE-2026-48962: code execution in IO-Compress via output globs.
+         (Closes: #1138854)
+     + CVE-2026-57432: out of bound heap reads in pack() and unpack().
+          (Closes: #1138905)
+     + CVE-2026-57433: signed integer overflow in Storable.
+          (Closes: #1138906)
+     + CVE-2026-19487: incorrect regular expression match results
+          (Closes: #1144668)
+Checksums-Sha1:
+ 680fa698df7b2e2c1ef870a067bae1848f9c1c9c 924524 libperl-dev_5.36.0-7+deb12u4_armel.deb
+ 2582ee0e29e02f2978c964bdf3406940e648c7df 3467532 libperl5.36_5.36.0-7+deb12u4_armel.deb
+ 937e21e6f075fed5ff8097923a14e5d38749d858 1441624 perl-base_5.36.0-7+deb12u4_armel.deb
+ b5d7a998004631d56956d434b967024600bbfcc3 11017044 perl-debug_5.36.0-7+deb12u4_armel.deb
+ fc977b18b90dbe78b147029a789b0cac4702341b 7910372 perl-doc_5.36.0-7+deb12u4_all.deb
+ bbc404cc0dc6fd9e8732dfbf5f36ab8bec39845f 2817356 perl-modules-5.36_5.36.0-7+deb12u4_all.deb
+ 1bf9f5cb65cdc6ae098150b5653e14a4af63dd11 6998 perl_5.36.0-7+deb12u4_armel.buildinfo
+ eb1e7b31a524a76c340f592edce5136fbd9e504e 239388 perl_5.36.0-7+deb12u4_armel.deb
+Checksums-Sha256:
+ c5764044deac176ee81b5daabb06ecf48a5d5a1a7efb5acc8367a97a314a5fd3 924524 libperl-dev_5.36.0-7+deb12u4_armel.deb
+ 5f5571ecc29115cc8aa22671acebffd1c57bb31248ee78cee7aa20c61279740d 3467532 libperl5.36_5.36.0-7+deb12u4_armel.deb
+ 080f8a7a1291f7ee11e1e2f82e78cad7b95456a381a46d34f78416577d9a1397 1441624 perl-base_5.36.0-7+deb12u4_armel.deb
+ 457a8313ae96de9b00e5dce3b7503b507bc11340caff1587d51c9d5f08bc9f9c 11017044 perl-debug_5.36.0-7+deb12u4_armel.deb
+ f4269cff4576d6f02a6756df842988e58451c7e945b08517dd235531b24e48f8 7910372 perl-doc_5.36.0-7+deb12u4_all.deb
+ 3ed38ffa8320e9bf7597cefa01b6a6ace4a08ccc77cdfd15ef7d8b711dea7166 2817356 perl-modules-5.36_5.36.0-7+deb12u4_all.deb
+ 7070dbb6f65c9dbd75beb22efdf51ee80b94b47faebd07f4c93e15236b2c937e 6998 perl_5.36.0-7+deb12u4_armel.buildinfo
+ cb4392dfb7716222225f5876b741d13aa5607b7ec70ae62f47dc9f0469042e9d 239388 perl_5.36.0-7+deb12u4_armel.deb
+Files:
+ 95cd08574b0d3c41141eff6be4c3c2d1 924524 libdevel optional libperl-dev_5.36.0-7+deb12u4_armel.deb
+ 23f799986a5e0ff42998428cb4651dbf 3467532 libs optional libperl5.36_5.36.0-7+deb12u4_armel.deb
+ 0432f8876cd454c20c098e523109493b 1441624 perl required perl-base_5.36.0-7+deb12u4_armel.deb
+ 2372a8ab0a04c2f0051131d2416a6938 11017044 devel optional perl-debug_5.36.0-7+deb12u4_armel.deb
+ 0b559f9541d07de8407423d419ec228e 7910372 doc optional perl-doc_5.36.0-7+deb12u4_all.deb
+ 7942bfa9da3711d4eb70298c1d66b7e2 2817356 libs optional perl-modules-5.36_5.36.0-7+deb12u4_all.deb
+ 2e5b08f6a9558b3a86df2e7ca459a37e 6998 perl standard perl_5.36.0-7+deb12u4_armel.buildinfo
+ e9a728b8940e83cc56d20ddc39224e0d 239388 perl standard perl_5.36.0-7+deb12u4_armel.deb

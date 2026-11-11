@@ -1,0 +1,61 @@
+Format: 1.8
+Date: Wed, 21 Oct 2026 16:54:24 +0700
+Source: openssl
+Binary: libcrypto3-udeb libssl-dev libssl-doc libssl3 libssl3-dbgsym libssl3-udeb openssl openssl-dbgsym
+Architecture: armel all
+Version: 3.0.22-1~deb12u2
+Distribution: bookworm-security
+Urgency: high
+Maintainer: Debian OpenSSL Team <pkg-openssl-devel@alioth-lists.debian.net>
+Changed-By: Arnaud Rebillout <arnaudr@debian.org>
+Description:
+ libcrypto3-udeb - Secure Sockets Layer toolkit - libcrypto udeb (udeb)
+ libssl-dev - Secure Sockets Layer toolkit - development files
+ libssl-doc - Secure Sockets Layer toolkit - development documentation
+ libssl3    - Secure Sockets Layer toolkit - shared libraries
+ libssl3-udeb - ssl shared library - udeb (udeb)
+ openssl    - Secure Sockets Layer toolkit - cryptographic utility
+Changes:
+ openssl (3.0.22-1~deb12u2) bookworm-security; urgency=high
+ .
+   * Non-maintainer upload by the LTS Team.
+   * CVE-2026-84782 ("DTLS Retransmits Handshake Messages From a Stale Buffer
+     Offset")
+   * CVE-2026-35189 ("Memory Allocation in Relative CRLDP Processing")
+   * CVE-2026-54872 ("Timing Side-Channel in Scalar Multiplication for Non-NIST
+     EC Curves")
+   * CVE-2026-75805 ("NULL Pointer Dereference in CMP Client Revocation
+     Response Handling")
+   * CVE-2026-75806 ("Unauthenticated and Undersized DTLS 1.2 AEAD Record
+     Causes DoS")
+   * CVE-2026-77696 ("Timing Side-Channel in SM2 Signature Generation")
+Checksums-Sha1:
+ a7be9e22d973e3882e00ada6c818fb4aa3b25249 1184264 libcrypto3-udeb_3.0.22-1~deb12u2_armel.udeb
+ 5e3083fbdc1eaf3720284ef4148a9a89e83cf5eb 2126000 libssl-dev_3.0.22-1~deb12u2_armel.deb
+ 021566dc12188ffe51d9b9f77855478d7f68e7f5 2407880 libssl-doc_3.0.22-1~deb12u2_all.deb
+ 833032774fb8feab3169de58f8161a391b58ce81 4389148 libssl3-dbgsym_3.0.22-1~deb12u2_armel.deb
+ d196e7ac9acec84db49a2f21123a072a43135bdc 186772 libssl3-udeb_3.0.22-1~deb12u2_armel.udeb
+ 424289053c9ef2d8b1ddc8a7d37180d8957dad62 1650532 libssl3_3.0.22-1~deb12u2_armel.deb
+ 0c94a5446c41e28a548afcf8e945f75e6c2b1411 648668 openssl-dbgsym_3.0.22-1~deb12u2_armel.deb
+ 02074ceba1fae76efd003dc286c06f4ab812c098 7060 openssl_3.0.22-1~deb12u2_armel.buildinfo
+ 278c83460fe034c4382b45b7651bb171927c7524 1402892 openssl_3.0.22-1~deb12u2_armel.deb
+Checksums-Sha256:
+ ccab368d785f73c0e6b15392ee2ac79605d62633367ca9a74d28a76232bc7346 1184264 libcrypto3-udeb_3.0.22-1~deb12u2_armel.udeb
+ b6847c733d83b552c68875ed6bba7ced02dd7a70d9646c15c899a8bb9ddc9f7d 2126000 libssl-dev_3.0.22-1~deb12u2_armel.deb
+ b79995160eeb7673b3933bf270105e075814a13b3d499db8c65bb41735748b41 2407880 libssl-doc_3.0.22-1~deb12u2_all.deb
+ 742e9be4efed5f02e783e96922dcd9304d491b187b9ecf126412b4e2e29364d6 4389148 libssl3-dbgsym_3.0.22-1~deb12u2_armel.deb
+ 048219b44ad92f64cb430a056bbfdd925a9c5643345517c0680baeb3ee81cbd8 186772 libssl3-udeb_3.0.22-1~deb12u2_armel.udeb
+ f52582f9bc614a1e8f0530af94c4c7aada7bb87e8817be0cf1f564382e04efe6 1650532 libssl3_3.0.22-1~deb12u2_armel.deb
+ e28bcc25c764de2e46f9b804dd44cbd1aef492badd62768b8e98c89221b3d5b4 648668 openssl-dbgsym_3.0.22-1~deb12u2_armel.deb
+ 01e8428db86bbbe1175f5f76f6256ab93a504d0f1589420434f235c3e4fe16d9 7060 openssl_3.0.22-1~deb12u2_armel.buildinfo
+ f6befb222dd7c43fb66cc31d44fe39dcb691f81374f8f195f281ff051576d723 1402892 openssl_3.0.22-1~deb12u2_armel.deb
+Files:
+ e939d41d3999f551771535a80657296c 1184264 debian-installer optional libcrypto3-udeb_3.0.22-1~deb12u2_armel.udeb
+ 8b9171dc3bdafc546f70e30ad907c936 2126000 libdevel optional libssl-dev_3.0.22-1~deb12u2_armel.deb
+ 87dc55122d1e5781cc4deafe0baf4594 2407880 doc optional libssl-doc_3.0.22-1~deb12u2_all.deb
+ 7021cf8e558fc1f41e307cbc4db34a40 4389148 debug optional libssl3-dbgsym_3.0.22-1~deb12u2_armel.deb
+ 5e67b210979ef166bebc2060645a0c32 186772 debian-installer optional libssl3-udeb_3.0.22-1~deb12u2_armel.udeb
+ ed9a7f269f916be6021bb60515aa1c7d 1650532 libs optional libssl3_3.0.22-1~deb12u2_armel.deb
+ 0a85cbfddf77a900afc701394826d19f 648668 debug optional openssl-dbgsym_3.0.22-1~deb12u2_armel.deb
+ 683b668dc4c00dc2d3bb6bb5ca71ccd4 7060 utils optional openssl_3.0.22-1~deb12u2_armel.buildinfo
+ 8ff299b0da29022e900ae46821818b22 1402892 utils optional openssl_3.0.22-1~deb12u2_armel.deb
