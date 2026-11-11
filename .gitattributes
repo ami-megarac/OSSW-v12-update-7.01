@@ -1,3 +1,12 @@
 “*.tar.gz” filter=lfs diff=lfs merge=lfs -text
 “*.tar.bz2” filter=lfs diff=lfs merge=lfs -text
 *.bz2 filter=lfs diff=lfs merge=lfs -text
+target_bookworm_armel_sysv-ARM/armel/mariadb/libmariadbd19-dbgsym_10.11.19-0+deb12u1_armel.deb filter=lfs diff=lfs merge=lfs -text
+target_bookworm_armel_sysv-ARM/armel/mariadb/mariadb-backup-dbgsym_10.11.19-0+deb12u1_armel.deb filter=lfs diff=lfs merge=lfs -text
+target_bookworm_armel_sysv-ARM/armel/mariadb/mariadb-server-core-dbgsym_10.11.19-0+deb12u1_armel.deb filter=lfs diff=lfs merge=lfs -text
+target_bookworm_armel_sysv-ARM/armel/mariadb/mariadb-test-dbgsym_10.11.19-0+deb12u1_armel.deb filter=lfs diff=lfs merge=lfs -text
+target_bookworm_armel_sysv-ARM/src/boost1.74/boost1.74_1.74.0+ds1.orig.tar.xz filter=lfs diff=lfs merge=lfs -text
+target_bookworm_armel_sysv-ARM/src/firmware-nonfree/firmware-nonfree_20230210.orig.tar.xz filter=lfs diff=lfs merge=lfs -text
+target_bookworm_armel_sysv-ARM/src/gcc-12/gcc-12_12.2.0.orig.tar.gz filter=lfs diff=lfs merge=lfs -text
+target_bookworm_armel_sysv-ARM/src/linux/linux_6.1.190.orig.tar.xz filter=lfs diff=lfs merge=lfs -text
+target_bookworm_armel_sysv-ARM/src/mariadb/mariadb_10.11.19.orig.tar.gz filter=lfs diff=lfs merge=lfs -text
