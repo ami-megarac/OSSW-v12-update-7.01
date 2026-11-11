@@ -1,0 +1,162 @@
+Format: 1.8
+Date: Tue, 13 Oct 2026 21:49:32 +0200
+Source: bind9
+Binary: bind9 bind9-dbgsym bind9-dev bind9-dnsutils bind9-dnsutils-dbgsym bind9-doc bind9-host bind9-host-dbgsym bind9-libs bind9-libs-dbgsym bind9-utils bind9-utils-dbgsym bind9utils dnsutils
+Architecture: armel all
+Version: 1:9.18.49-1~deb12u3
+Distribution: bookworm-security
+Urgency: high
+Maintainer: Debian DNS Team <team+dns@tracker.debian.org>
+Changed-By: Bastien Roucariès <rouca@debian.org>
+Description:
+ bind9      - Internet Domain Name Server
+ bind9-dev  - Static Libraries and Headers used by BIND 9
+ bind9-dnsutils - Clients provided with BIND 9
+ bind9-doc  - Documentation for BIND 9
+ bind9-host - DNS Lookup Utility
+ bind9-libs - Shared Libraries used by BIND 9
+ bind9-utils - Utilities for BIND 9
+ bind9utils - Transitional package for bind9-utils
+ dnsutils   - Transitional package for bind9-dnsutils
+Changes:
+ bind9 (1:9.18.49-1~deb12u3) bookworm-security; urgency=high
+ .
+   * Non-maintainer upload by the LTS Team.
+   * Fix CVE-2026-19033: Require a TSIG on every message
+     of incoming zone transfers.
+     For a secondary zone with transfers restricted by TSIG,
+     named may start to serve the data provided in a zone
+     transfer before the final message with the TSIG
+     signature arrives. This could allow an attacker
+     that does not actually possess a valid TSIG signature
+     to send unauthorized zone contents to a secondary server.
+     Although no TSIG signature ever arrives,
+     named does not rollback to the pre-transfer state.
+   * Fix CVE-2026-19662: Prevent resolver crash with cached
+     DNSSEC proofs.
+     Under certain timing conditions, concurrent recursive queries could
+     cause named to crash when cached DNSSEC NOQNAME
+     proof data was replaced while still in use. Cached proof data is now
+     retained until all queries using it have completed.
+   * Fix CVE-2026-19666: DNS64 with break-dnssec could
+     cause an assertion failure
+     When a "dns64" statement is configured with "break-dnssec yes"
+     and its "exclude" list matches some but not all of the addresses
+     in an AAAA RRset, named removes the excluded addresses from
+     the answer instead of synthesizing new ones.
+     If the answer being filtered had been cached
+     together with a proof that the queried name does not exist
+     -- which is what a wildcard match produces -- named terminated
+     with an assertion failure.
+   * Fix CVE-2026-19667: Reject negative cache records that do not
+     fit in a dns_rdata_t
+     A single crafted response from a server could make a resolver cache
+     a malformed negative entry and then terminate with an assertion failure
+     when reading it back. Only recursive resolvers are affected, on a
+     default configuration.
+   * Fix CVE-2026-19941: Prevent forged DNSSEC-validated NXDOMAIN responses
+     A validating resolver could accept a signed NSEC record from
+     an unrelated zone as proof that a wildcard did not exist. An
+     on-path attacker or malicious forwarder controlling a signed
+     zone could therefore forge an authenticated NXDOMAIN response
+     for a name that should resolve through a wildcard. BIND now
+     requires the wildcard-denial and name-nonexistence proofs to
+     be signed by the same zone.
+   * Fix CVE-2026-75029: Discard repeated SOA, CNAME, and DNAME
+     records when parsing DNS messages.
+     A DNS message could carry the same SOA, CNAME, or DNAME record
+     many times, and named kept every copy while parsing it. With name
+     compression those copies took up far more memory internally than
+     in the message itself, and every later processing step had to
+     handle all of them. named now keeps the first copy of such a record
+     and discards identical repeats.
+   * Fix CVE-2026-78301: Out-of-zone records in a zone database
+     could be served as authoritative
+     When a zone database contained records for names outside the zone
+     - such as a delegation above the zone apex, left behind by a
+     secondary that had accepted out-of-zone data from its
+     primary — the server could treat them as authoritative and
+     answer queries for names inside the zone with that
+     out-of-zone data instead of the zone's own. A server that was
+     also a resolver could follow such a delegation and cache
+     the answers of the server it named, affecting names outside
+     the configured zone. Zone database lookups are now confined
+     to names at or below the zone's origin.
+   * Fix CVE-2026-80274: Crash on wildcard answers carrying both
+     NSEC and NSEC3 proofs
+     When a wildcard answer arrived with both NSEC and NSEC3 records
+     at the name proving that the queried name does not exist,
+     the resolver could pick different records when caching the
+     answer and when retrieving the proof, depending on the order
+     in which the authoritative server sent them. This could terminate
+     named with an assertion failure, fail the query with
+     SERVFAIL, or serve a denial record other than the one that had
+     been verified. The resolver now caches and serves the same denial
+     record it accepted when the answer was received.
+   * Fix CVE-2026-81563 Following HTTPS/SVCB aliases could leak
+     resolver cache memory.
+     When a recursive server answered a query for an HTTPS or
+     SVCB record in alias form and the alias target had more
+     than 13 records, the target records were pinned in the cache
+     permanently instead of being released once the answer was sent.
+     A remote party who could make the server follow such aliases
+     to a steady stream of fresh names could grow the cache beyond the
+     configured max-cache-size until the server was unable to resolve
+     unrelated names. The records are now released correctly.
+   * Fix CVE-2026-81736: Cached HTTPS/SVCB aliases could exhaust resolver CPU
+     A recursive resolver that had cached a large set of interlinked HTTPS
+     or SVCB records in alias form could be driven to do an excessive
+     amount of work assembling a single response, because it followed every
+     cached alias target when building the additional section. A client
+     permitted to use recursion, together with an attacker-controlled zone
+     used to plant the records, could repeat small queries to consume
+     enough CPU to delay or deny service to other clients. The amount of
+     additional processing done for one query is now bounded.
+Checksums-Sha1:
+ 87cf809029f7f77c29980c192799ba114b57a6ad 594400 bind9-dbgsym_9.18.49-1~deb12u3_armel.deb
+ 24d6b426d933bcc050468ed68d1c1f170d9fe3c9 270664 bind9-dev_9.18.49-1~deb12u3_armel.deb
+ 1a9a88d135a72fba7cf6dff2982948857a90c9b7 354056 bind9-dnsutils-dbgsym_9.18.49-1~deb12u3_armel.deb
+ ed051b6010e5e269f2862e6bda28bdb683285774 150444 bind9-dnsutils_9.18.49-1~deb12u3_armel.deb
+ 0c893829779e037325e2985c3e455e6fda190956 3524564 bind9-doc_9.18.49-1~deb12u3_all.deb
+ 48eb8d885a3f34b08d3ab6da1634b059d7a99ef6 101540 bind9-host-dbgsym_9.18.49-1~deb12u3_armel.deb
+ 1600cbd0008c22a1cca9317aef10810fbcd5dc08 55588 bind9-host_9.18.49-1~deb12u3_armel.deb
+ 5903af32a68fd3b41f135a5cfa7b069ea9c9f814 3600288 bind9-libs-dbgsym_9.18.49-1~deb12u3_armel.deb
+ ecfb204eadd433fbecc53e74cf77eb4360447b7d 1036480 bind9-libs_9.18.49-1~deb12u3_armel.deb
+ 2b9ddc504d79a8bfd1bc5994da9add0e7ee0f52a 301004 bind9-utils-dbgsym_9.18.49-1~deb12u3_armel.deb
+ 2c16ea0e34251d8398248c422a7a71aff0f52239 152304 bind9-utils_9.18.49-1~deb12u3_armel.deb
+ d4cd020c1189ce77adea551cd8f8af4c790c8e49 14571 bind9_9.18.49-1~deb12u3_armel.buildinfo
+ d3b3503d34c84bbd86fa42c070e02179d91d60d6 237256 bind9_9.18.49-1~deb12u3_armel.deb
+ df5013ba45935e484e3b8225bf8f5f66aa31e86e 14228 bind9utils_9.18.49-1~deb12u3_all.deb
+ 21136823d190c674839ffc7de90ae676fa2d9a23 14224 dnsutils_9.18.49-1~deb12u3_all.deb
+Checksums-Sha256:
+ 4ad647d5003838cdd3a9a3d62062ad381354690bb037d88fd6a7afc45465a67d 594400 bind9-dbgsym_9.18.49-1~deb12u3_armel.deb
+ ae2d5847c756de0e9e764d8d46a80e5e4cae8ceb9e36e4804afcd8b6a7c7fdb1 270664 bind9-dev_9.18.49-1~deb12u3_armel.deb
+ 210a090ce32abc29bdc5899a46279789578ac70a16e895cc0b63b7297ddb331a 354056 bind9-dnsutils-dbgsym_9.18.49-1~deb12u3_armel.deb
+ 2cdb80e134cdd1b1b3f880446e193f05a3b7566f4d71dbb31f3f93f154170d31 150444 bind9-dnsutils_9.18.49-1~deb12u3_armel.deb
+ 7a3282f365576e58378b242ea7e8bd65ce227e94dd4abe8acbb5874873e7265e 3524564 bind9-doc_9.18.49-1~deb12u3_all.deb
+ cfaf28e5f116c60d5b47746fa9be2998bd0c06b638cc78dc7747ea08d743de5f 101540 bind9-host-dbgsym_9.18.49-1~deb12u3_armel.deb
+ 6649362ed09b7ec95023949429ced311a4c7d6a885fff27ee8dbe977fd67d43b 55588 bind9-host_9.18.49-1~deb12u3_armel.deb
+ ef956cf64261431be0d704d1f3e92bdac4e0841752be9649e7ca48af2a909645 3600288 bind9-libs-dbgsym_9.18.49-1~deb12u3_armel.deb
+ 819c68c709813764d9b0bfdfba491c6554e9e2c6392318595fafd1a6f797e1d2 1036480 bind9-libs_9.18.49-1~deb12u3_armel.deb
+ a682fc4019b5835ad5420f95d2a7ffe7e6c6cee282637779c4ec8fc8c20d3ff4 301004 bind9-utils-dbgsym_9.18.49-1~deb12u3_armel.deb
+ 92ed5d7761c5fe60ded858a51bf3b47a75893553db63d9d26dda39d347550142 152304 bind9-utils_9.18.49-1~deb12u3_armel.deb
+ 713f01d6a9920625a382ce206238b8a440c2893f4175072abd3cee1b0193a6c9 14571 bind9_9.18.49-1~deb12u3_armel.buildinfo
+ b2967063f62d9c99004f5471e55fd4bda7b9bdc9a7af1c7d20039b12e5efb935 237256 bind9_9.18.49-1~deb12u3_armel.deb
+ bab82d9cc75d8d3b64ce1f64eed0c3dc7481be06d5800407e4689fa1ecafcaf5 14228 bind9utils_9.18.49-1~deb12u3_all.deb
+ 264639279438f4bcb7e946aa66306970cce82e03d22d4a8935f783d2251c1c92 14224 dnsutils_9.18.49-1~deb12u3_all.deb
+Files:
+ 924bfaa9c62b5ef5bfc582cf9598154c 594400 debug optional bind9-dbgsym_9.18.49-1~deb12u3_armel.deb
+ 6b4cf25d096c6a390557824e0303648e 270664 devel optional bind9-dev_9.18.49-1~deb12u3_armel.deb
+ fdb63329549e5e22b72340f8e7a2c0da 354056 debug optional bind9-dnsutils-dbgsym_9.18.49-1~deb12u3_armel.deb
+ 79756dc900f4da13b5f52c9be472af6d 150444 net standard bind9-dnsutils_9.18.49-1~deb12u3_armel.deb
+ 874960218bc9989058b844230ca15fd9 3524564 doc optional bind9-doc_9.18.49-1~deb12u3_all.deb
+ e7ee6655098c13c137591171c0ad252e 101540 debug optional bind9-host-dbgsym_9.18.49-1~deb12u3_armel.deb
+ b134f99ebe37eb9d36a2b13ef0ce298f 55588 net standard bind9-host_9.18.49-1~deb12u3_armel.deb
+ 87c1eeab7131e740dea196350e6dc302 3600288 debug optional bind9-libs-dbgsym_9.18.49-1~deb12u3_armel.deb
+ 0d98a1d0f0b875134318784fd6ada023 1036480 libs standard bind9-libs_9.18.49-1~deb12u3_armel.deb
+ 6fb538d5a2534dad928b204f7e61b94c 301004 debug optional bind9-utils-dbgsym_9.18.49-1~deb12u3_armel.deb
+ 6c0d74a9d92a19dddd6abb76677a36e2 152304 net optional bind9-utils_9.18.49-1~deb12u3_armel.deb
+ 3168ee2ba448d1bb10d828b999c2b4c0 14571 net optional bind9_9.18.49-1~deb12u3_armel.buildinfo
+ 035ce08d05a7c4a91d1550345f124a15 237256 net optional bind9_9.18.49-1~deb12u3_armel.deb
+ 03c6b822df5f9c25870450dd5c8659f5 14228 oldlibs optional bind9utils_9.18.49-1~deb12u3_all.deb
+ 8621a0883c6345d7f16c4148cfd9c991 14224 oldlibs optional dnsutils_9.18.49-1~deb12u3_all.deb

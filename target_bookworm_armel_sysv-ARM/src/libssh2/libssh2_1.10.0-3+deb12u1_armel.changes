@@ -1,0 +1,64 @@
+Format: 1.8
+Date: Sat, 05 Sep 2026 09:40:39 -0300
+Source: libssh2
+Binary: libssh2-1 libssh2-1-dbgsym libssh2-1-dev
+Architecture: source armel
+Version: 1.10.0-3+deb12u1
+Distribution: bookworm-security
+Urgency: high
+Maintainer: Nicolas Mora <babelouest@debian.org>
+Changed-By: Emmanuel Arias <eamanu@debian.org>
+Description:
+ libssh2-1  - SSH2 client-side library
+ libssh2-1-dev - SSH2 client-side library (development headers)
+Closes: 1140401 1142856 1144415
+Changes:
+ libssh2 (1.10.0-3+deb12u1) bookworm-security; urgency=high
+ .
+   * Non-maintainer upload by the LTS Team.
+   * CVE-2025-15661: a malicious server could send an oversized link_len in
+     SSH_FXP_NAME responses (READLINK/REALPATH) and trigger an
+     out-of-bounds memcpy, leaking heap memory or crashing the client
+     (Closes: #1140401).
+   * CVE-2026-7598: The impacted element is the function userauth_password of the
+     file src/userauth.c. Such manipulation of the argument
+     username_len/password_len leads to integer overflow.
+   * CVE-2026-58050: libsshw2 reads an attacker-controlled 32-bit attribute
+     without bounds checking, so on 32-bit platforms the multiplication overflows
+     to an undersized buffer. count from a publickey-subsystem response and uses
+     it without bounds checking, causing an overflows to an undersized buffer
+     (Closes: #1144415).
+   * CVE-2026-58051: libssh2 grows its publickey list with SSH2_REALLOC but does
+     not zero-initialize new entries before parsing populates them, so a parse
+     failure reaching the cleanup path leaves. A malicious SSH server offering
+     the publickey subsystem can use a malformed response to make cleanup free an
+     uninitialized, attacker-influenceable attrs pointer in a connecting libssh2
+     client.
+   * CVE-2026-66032: fix double free in sftp_open() reachable from a malicious
+     server during SFTP session setup (SSH_FXP_OPEN answered with
+     SSH_FXP_STATUS/FX_OK followed by a failing sftp_packet_require()) (Closes:
+     #1142856).
+   * CVE-2026-66034: fix missing bounds check in libssh2_publickey_list_fetch()
+     leading to a heap out-of-bounds read and a free of an uninitialized pointer,
+     triggerable by a malicious server via the publickey subsystem.
+Checksums-Sha1:
+ 207dbba707caa022306c20bfc96f990b401f57fe 1188 libssh2_1.10.0-3+deb12u1.dsc
+ 39f101de0b8cdf8f38eb8f50471f82c2d84c31c5 12204 libssh2_1.10.0-3+deb12u1.debian.tar.xz
+ 826d096e35a28addd73c7398feee40f989b3edc9 256828 libssh2-1-dbgsym_1.10.0-3+deb12u1_armel.deb
+ 0d82fece5a837f05deb16600511bee953a248ea5 292752 libssh2-1-dev_1.10.0-3+deb12u1_armel.deb
+ 74e36786f8f8ef3f12bb76441c5d96eead8e587b 158160 libssh2-1_1.10.0-3+deb12u1_armel.deb
+ 8887c24b50e4a351990134a034826eeb0af7a035 6390 libssh2_1.10.0-3+deb12u1_armel.buildinfo
+Checksums-Sha256:
+ 50fb8c56627597f5bda5ed022c409695d3882ee9bfa76fbab1001f98dbdb9ab9 1188 libssh2_1.10.0-3+deb12u1.dsc
+ f04132827d559977ebd1726d23e5b31f61c63d6c430974c7f66a9390e59b0327 12204 libssh2_1.10.0-3+deb12u1.debian.tar.xz
+ 15b705240b554a27439b794e47bf419ef5456585dc00578e34e079e69f222f3d 256828 libssh2-1-dbgsym_1.10.0-3+deb12u1_armel.deb
+ a1a68fa68a6169192022a835c3ff9d6c8bbfd2fce8264d59fdedadb36f68632b 292752 libssh2-1-dev_1.10.0-3+deb12u1_armel.deb
+ e6cf51de08633c9a5989efc70b7400a434f418cd1029f4ae86fe841bff1e9659 158160 libssh2-1_1.10.0-3+deb12u1_armel.deb
+ e1037db0a4fdc7bde04c7fa79ac0f960f254b05e1646ec1d5a3726344fc82890 6390 libssh2_1.10.0-3+deb12u1_armel.buildinfo
+Files:
+ 149969357523543a80b57f6f5684f067 1188 libs optional libssh2_1.10.0-3+deb12u1.dsc
+ e56b54548f122c0520caf9f9064f3a33 12204 libs optional libssh2_1.10.0-3+deb12u1.debian.tar.xz
+ 1fb4288a2da816b5d048a500de18b319 256828 debug optional libssh2-1-dbgsym_1.10.0-3+deb12u1_armel.deb
+ 6216e4fdeb49d5e49f5da85f7011347a 292752 libdevel optional libssh2-1-dev_1.10.0-3+deb12u1_armel.deb
+ 15cf0c3097c33833b7f043556cec86a1 158160 libs optional libssh2-1_1.10.0-3+deb12u1_armel.deb
+ 09e1d7103ddefbcf31c38e9f70abe35e 6390 libs optional libssh2_1.10.0-3+deb12u1_armel.buildinfo

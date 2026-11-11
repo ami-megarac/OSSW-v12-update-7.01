@@ -1,0 +1,48 @@
+Format: 1.8
+Date: Thu, 22 Oct 2026 00:34:41 +0200
+Source: expat
+Binary: expat expat-dbgsym libexpat1 libexpat1-dbgsym libexpat1-dev libexpat1-udeb
+Architecture: armel
+Version: 2.5.0-1+deb12u5
+Distribution: bookworm-security
+Urgency: medium
+Maintainer: Laszlo Boszormenyi (GCS) <gcs@debian.org>
+Changed-By: Andrej Shadura <andrewsh@debian.org>
+Description:
+ expat      - XML parsing C library - example application
+ libexpat1  - XML parsing C library - runtime library
+ libexpat1-dev - XML parsing C library - development kit
+ libexpat1-udeb - XML parsing C library - runtime library (udeb)
+Changes:
+ expat (2.5.0-1+deb12u5) bookworm-security; urgency=medium
+ .
+   * Backport upstream security patches:
+     - CVE-2026-56132: Fix out-of-bound scaffolding index store in doProlog.
+     - CVE-2026-102633: Add runtime overflow check in expat_realloc.
+     - CVE-2026-77214: Fix a heap buffer over-read vulnerability in
+       XML_ParseBuffer.
+   * Set XML_GE=1 to enable allocation tracking (CVE-2025-59375).
+Checksums-Sha1:
+ 5b6671ebe436aed4f9a27f7595da5f388a4692b0 32440 expat-dbgsym_2.5.0-1+deb12u5_armel.deb
+ 5c5b45b86502efa34af566e7736bd197cabfa01b 7933 expat_2.5.0-1+deb12u5_armel.buildinfo
+ 2bcefbd5fff561ded4a77cae84f1829f135c8d10 40224 expat_2.5.0-1+deb12u5_armel.deb
+ 9d0eda76e961fe6d3502aa51bf0dda401540a40f 334880 libexpat1-dbgsym_2.5.0-1+deb12u5_armel.deb
+ e0c759f203afd628d62af626fdc36bc5fc7db5b6 137680 libexpat1-dev_2.5.0-1+deb12u5_armel.deb
+ 95124fb958323c34d2a63f762001b48b510791f5 49344 libexpat1-udeb_2.5.0-1+deb12u5_armel.udeb
+ 3c28360f5ecd1f9ad633af45b3c57446c0681d9d 84552 libexpat1_2.5.0-1+deb12u5_armel.deb
+Checksums-Sha256:
+ 7ab52672e5d3a0a994a9ed3c790958b9a0ee6294a64d1940c5b9df9377b48e00 32440 expat-dbgsym_2.5.0-1+deb12u5_armel.deb
+ c8d64fe17e41fd630053774772af03350cc30d86fe455ac62491e2a845d2a410 7933 expat_2.5.0-1+deb12u5_armel.buildinfo
+ 4b9304c48d4bdd71c8b2c6c8f1c902f1068e69bf3210682d4567361f598d4938 40224 expat_2.5.0-1+deb12u5_armel.deb
+ 606a284e8e1f39863d6894ca96e61d728ee1add9dce913498450b82d9775a62a 334880 libexpat1-dbgsym_2.5.0-1+deb12u5_armel.deb
+ 8d578209f5574219a4afec67592c39848671baff72394176aae60cafec30ccb8 137680 libexpat1-dev_2.5.0-1+deb12u5_armel.deb
+ 3381fde363082ccff2dad06f722f8d76c9b741a222b5a0dad3f53aef5d328482 49344 libexpat1-udeb_2.5.0-1+deb12u5_armel.udeb
+ a86ddae91ead966b5b43786a29db7c55059c1faf9aba530e91457890ec56b0f4 84552 libexpat1_2.5.0-1+deb12u5_armel.deb
+Files:
+ 97950e743c04f0e3afe2522ef6ebf035 32440 debug optional expat-dbgsym_2.5.0-1+deb12u5_armel.deb
+ 2495c252bcd69c886145660bbf7d9f9d 7933 text optional expat_2.5.0-1+deb12u5_armel.buildinfo
+ ff8c8df17f25e19ae1a853ef19485f41 40224 text optional expat_2.5.0-1+deb12u5_armel.deb
+ 4bda64ef696da52674fa38a96230924c 334880 debug optional libexpat1-dbgsym_2.5.0-1+deb12u5_armel.deb
+ 5bc32b30ed121f8aaad8b015ee93f173 137680 libdevel optional libexpat1-dev_2.5.0-1+deb12u5_armel.deb
+ 3c611696ba279a4174ca31c406c88fba 49344 debian-installer optional libexpat1-udeb_2.5.0-1+deb12u5_armel.udeb
+ 903e2f846d5d2f602ca6a6da7cc30f7c 84552 libs optional libexpat1_2.5.0-1+deb12u5_armel.deb

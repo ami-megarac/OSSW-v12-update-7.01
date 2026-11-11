@@ -1,0 +1,32 @@
+Format: 1.8
+Date: Tue, 20 Oct 2026 21:45:34 +0200
+Source: ca-certificates
+Binary: ca-certificates ca-certificates-udeb
+Architecture: all
+Version: 20250419~deb12u2
+Distribution: bookworm-security
+Urgency: high
+Maintainer: Julien Cristau <jcristau@debian.org>
+Changed-By: Salvatore Bonaccorso <carnil@debian.org>
+Description:
+ ca-certificates - Common CA certificates
+ ca-certificates-udeb - Common CA certificates - udeb (udeb)
+Closes: 1151413
+Changes:
+ ca-certificates (20250419~deb12u2) bookworm-security; urgency=high
+ .
+   * Non-maintainer upload.
+   * Blacklist "emSign ECC Root CA - G3" and "Comodo AAA Services root"
+     (Closes: #1151413)
+Checksums-Sha1:
+ c047384e1f1dd5b42ea33bad3ce09cd2cb784ad1 130796 ca-certificates-udeb_20250419~deb12u2_all.udeb
+ a629617be57f8b5b330487277c650262e0a79e8f 160948 ca-certificates_20250419~deb12u2_all.deb
+ b4e7e6d3b2ae82edcab72997ff014278551e8a98 5876 ca-certificates_20250419~deb12u2_armel.buildinfo
+Checksums-Sha256:
+ 5c14803663bc6f026fd6a7c7adcffa75271279cf869984d329543bd2e2bf58d3 130796 ca-certificates-udeb_20250419~deb12u2_all.udeb
+ b9f76b5271a7ac373fd5e7e1b5b826a71ddd702b42a0d104955ecb1acfffc94b 160948 ca-certificates_20250419~deb12u2_all.deb
+ 54a52ceb55b2080975d26dee5c9297c4ac7b20737d7ff5e764025409af954c64 5876 ca-certificates_20250419~deb12u2_armel.buildinfo
+Files:
+ b3b7cce43d612295af76a259e1f45664 130796 debian-installer optional ca-certificates-udeb_20250419~deb12u2_all.udeb
+ 81206e206daeede4e86d1e00e4aede55 160948 misc standard ca-certificates_20250419~deb12u2_all.deb
+ 05df450a8055e3ce2017f2a89dd93a8f 5876 misc optional ca-certificates_20250419~deb12u2_armel.buildinfo
