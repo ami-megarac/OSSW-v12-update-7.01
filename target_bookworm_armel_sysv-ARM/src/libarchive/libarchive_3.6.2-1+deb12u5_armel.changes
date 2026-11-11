@@ -1,0 +1,40 @@
+Format: 1.8
+Date: Sun, 30 Aug 2026 09:11:03 +0530
+Source: libarchive
+Binary: libarchive-dev libarchive-tools libarchive-tools-dbgsym libarchive13 libarchive13-dbgsym
+Architecture: armel
+Version: 3.6.2-1+deb12u5
+Distribution: bullseye-security
+Urgency: high
+Maintainer: Peter Pentchev <roam@debian.org>
+Changed-By: Abhijith PA <abhijith@debian.org>
+Description:
+ libarchive-dev - Multi-format archive and compression library (development files)
+ libarchive-tools - FreeBSD implementations of 'tar' and 'cpio' and other archive too
+ libarchive13 - Multi-format archive and compression library (shared library)
+Changes:
+ libarchive (3.6.2-1+deb12u5) bullseye-security; urgency=high
+ .
+   * Non-maintainer upload by the LTS Security Team.
+   * Fix CVE-2026-14164, CVE-2026-15028, CVE-2026-16517
+Checksums-Sha1:
+ 68dea3b02be884578a99898b2ab6829ccfe01e81 520756 libarchive-dev_3.6.2-1+deb12u5_armel.deb
+ d7a653955e35c402e1d3c7368711df28d21c0529 91984 libarchive-tools-dbgsym_3.6.2-1+deb12u5_armel.deb
+ f5cd8e718de0f3e7bcd36b0bcbc114a037a0d55a 70400 libarchive-tools_3.6.2-1+deb12u5_armel.deb
+ 40363abff66881241075af7b33cd168d2ce55b2a 1017048 libarchive13-dbgsym_3.6.2-1+deb12u5_armel.deb
+ 17b5649fa6064aca3eb30bce4f4e20e9d90ba7c0 298296 libarchive13_3.6.2-1+deb12u5_armel.deb
+ 94a0d303ea653554ba8d04331d08e156240745b9 6929 libarchive_3.6.2-1+deb12u5_armel.buildinfo
+Checksums-Sha256:
+ 9f33f1a243c108cb8a3b7b9f3b9bc5fde570ec5afe04f41588bb616f8e54b4ed 520756 libarchive-dev_3.6.2-1+deb12u5_armel.deb
+ 15867e7010f3517d927de21ec2d639e6d1cb65e0e5a88bb5b1dbd386b7b9ec95 91984 libarchive-tools-dbgsym_3.6.2-1+deb12u5_armel.deb
+ 1bcbd908872073cc704a89085822484180da76b74e1884dc0163047346dcbbb2 70400 libarchive-tools_3.6.2-1+deb12u5_armel.deb
+ 5bf63c81607003686753dc2b8b638945a6ac5749f65adc8c15603de1d6372ce2 1017048 libarchive13-dbgsym_3.6.2-1+deb12u5_armel.deb
+ 937771437512f8d518a1dad4fc2a2ba5ca20dd93dc7feac86d91e07bdbb47339 298296 libarchive13_3.6.2-1+deb12u5_armel.deb
+ bec930e7bbb0faea833fc044dd1b283888f1416ded16f4cf3dc405466275c933 6929 libarchive_3.6.2-1+deb12u5_armel.buildinfo
+Files:
+ b5edde09c4fc54a971749df1fdb79e29 520756 libdevel optional libarchive-dev_3.6.2-1+deb12u5_armel.deb
+ a204969c2514179b4438c6e2e6b1cbe1 91984 debug optional libarchive-tools-dbgsym_3.6.2-1+deb12u5_armel.deb
+ e4a9ac191597889b7bac5753d4ee04de 70400 utils optional libarchive-tools_3.6.2-1+deb12u5_armel.deb
+ 187975193c271f49a99d24910e362a7f 1017048 debug optional libarchive13-dbgsym_3.6.2-1+deb12u5_armel.deb
+ 10d7e3bbb5e38ff54734a12c3f5f45a4 298296 libs optional libarchive13_3.6.2-1+deb12u5_armel.deb
+ cbfb862f3cb08da1c7d3d28c0885494f 6929 libs optional libarchive_3.6.2-1+deb12u5_armel.buildinfo

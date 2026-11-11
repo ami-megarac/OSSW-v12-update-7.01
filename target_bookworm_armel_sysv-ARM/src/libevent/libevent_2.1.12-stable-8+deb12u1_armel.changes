@@ -1,0 +1,64 @@
+Format: 1.8
+Date: Fri, 18 Sep 2026 13:27:32 +0200
+Source: libevent
+Binary: libevent-2.1-7 libevent-2.1-7-dbgsym libevent-core-2.1-7 libevent-core-2.1-7-dbgsym libevent-dev libevent-extra-2.1-7 libevent-extra-2.1-7-dbgsym libevent-openssl-2.1-7 libevent-openssl-2.1-7-dbgsym libevent-pthreads-2.1-7 libevent-pthreads-2.1-7-dbgsym
+Architecture: armel
+Version: 2.1.12-stable-8+deb12u1
+Distribution: bookworm-security
+Urgency: medium
+Maintainer: Nicolas Mora <babelouest@debian.org>
+Changed-By: Andreas Henriksson <andreas@fatal.se>
+Description:
+ libevent-2.1-7 - Asynchronous event notification library
+ libevent-core-2.1-7 - Asynchronous event notification library (core)
+ libevent-dev - Asynchronous event notification library (development files)
+ libevent-extra-2.1-7 - Asynchronous event notification library (extra)
+ libevent-openssl-2.1-7 - Asynchronous event notification library (openssl)
+ libevent-pthreads-2.1-7 - Asynchronous event notification library (pthreads)
+Changes:
+ libevent (2.1.12-stable-8+deb12u1) bookworm-security; urgency=medium
+ .
+   * Non-maintainer upload by the LTS Team.
+   * Cherry-pickes security-fixes from upstream.
+     CVE-2026-63379, CVE-2026-63381, CVE-2026-63382, CVE-2026-63383,
+     CVE-2026-63384, CVE-2026-63385, CVE-2026-63387, CVE-2026-63388
+   * Update symbols with 2 additions
+Checksums-Sha1:
+ cd39f0c600563d00cf901097ad0cf42fbdafd247 364772 libevent-2.1-7-dbgsym_2.1.12-stable-8+deb12u1_armel.deb
+ c12f308eb1e836d31baf7dafafc925545a9e841a 163004 libevent-2.1-7_2.1.12-stable-8+deb12u1_armel.deb
+ b0f1f1b07a585d4156410ef688253fbd2b84f355 227448 libevent-core-2.1-7-dbgsym_2.1.12-stable-8+deb12u1_armel.deb
+ 5ec694adb56882d795c9509dceb9cd5fed311d36 120592 libevent-core-2.1-7_2.1.12-stable-8+deb12u1_armel.deb
+ 6fdda88566a4e440c167db22fe1458ec3daafec5 290148 libevent-dev_2.1.12-stable-8+deb12u1_armel.deb
+ 79aec22580e766cc79de21e818b1d81a9e3e6e0b 149088 libevent-extra-2.1-7-dbgsym_2.1.12-stable-8+deb12u1_armel.deb
+ b4da6c64dadf3c45a72712b427c8f8b1bdf269d3 99476 libevent-extra-2.1-7_2.1.12-stable-8+deb12u1_armel.deb
+ 795ee35d8ebeefdd18b9e89211751044004d4327 28144 libevent-openssl-2.1-7-dbgsym_2.1.12-stable-8+deb12u1_armel.deb
+ 01e40ef48262330578d64252daa08959e67c3b2d 58368 libevent-openssl-2.1-7_2.1.12-stable-8+deb12u1_armel.deb
+ 5d8ed68422809c38252e3a54421d37af9188810c 7432 libevent-pthreads-2.1-7-dbgsym_2.1.12-stable-8+deb12u1_armel.deb
+ 3908f286efe793c075ed3a436f7d1045a38fd0cb 53416 libevent-pthreads-2.1-7_2.1.12-stable-8+deb12u1_armel.deb
+ 9faf4fb8c1c77502c1362bf07c2c8a045433fd5d 8681 libevent_2.1.12-stable-8+deb12u1_armel.buildinfo
+Checksums-Sha256:
+ dc032049762db5d8b12ae57aa378c5fff24fc842d92033b8d18b45ad16ed58cc 364772 libevent-2.1-7-dbgsym_2.1.12-stable-8+deb12u1_armel.deb
+ 0fb04851aac461ba385677eabed207e1388c975a0c53a0d280319d0c5bd8e576 163004 libevent-2.1-7_2.1.12-stable-8+deb12u1_armel.deb
+ d71acc0eb966826f9c2e0cfbec1ff08a418fd07f7d9e81b967ae49dc985d89b2 227448 libevent-core-2.1-7-dbgsym_2.1.12-stable-8+deb12u1_armel.deb
+ 57747cd571b7ef686d9800dbe3a9348019164e2626f160b0f3a4ad85ab914937 120592 libevent-core-2.1-7_2.1.12-stable-8+deb12u1_armel.deb
+ afa853507a9617a45ae41af86d76cfc15e4b4dfc5c4498f29de90c7a89244da0 290148 libevent-dev_2.1.12-stable-8+deb12u1_armel.deb
+ d68627a1a92ab85838775b8017dae4d947c758a6b536109bea4b1de5fd8d5313 149088 libevent-extra-2.1-7-dbgsym_2.1.12-stable-8+deb12u1_armel.deb
+ cfad77da045927b8a4a678a3f1bacabf9e80dae8acf222dd797b4018da57d7c4 99476 libevent-extra-2.1-7_2.1.12-stable-8+deb12u1_armel.deb
+ 1b88936b29f327430bfa9618a4eef1af85669cd05a2dfa945995eef4f1f40ed4 28144 libevent-openssl-2.1-7-dbgsym_2.1.12-stable-8+deb12u1_armel.deb
+ 6c0771a8a3147472bd819335a15f040888424506ef5ac238f8bf6b1b37739b3d 58368 libevent-openssl-2.1-7_2.1.12-stable-8+deb12u1_armel.deb
+ 8d6bce6678d4c0c9e12ee6b49e89bacbb11e489e19a9598689620dba46625a61 7432 libevent-pthreads-2.1-7-dbgsym_2.1.12-stable-8+deb12u1_armel.deb
+ 670f873c4e9e8c8499184f0d048a4ecdfdd1e367835e564b9d118eae473171fe 53416 libevent-pthreads-2.1-7_2.1.12-stable-8+deb12u1_armel.deb
+ e358569efe2fba91d1f8e0ca2680ffb7f9349a13ce8ccf4511d416893b87345c 8681 libevent_2.1.12-stable-8+deb12u1_armel.buildinfo
+Files:
+ d1944a221bbbf2d84598fd86e025c532 364772 debug optional libevent-2.1-7-dbgsym_2.1.12-stable-8+deb12u1_armel.deb
+ 836081ffba92e2a7a293a67d9548f7fa 163004 libs optional libevent-2.1-7_2.1.12-stable-8+deb12u1_armel.deb
+ 4bb4b6fcf752f3bd1bddf0ffdc4fcaf9 227448 debug optional libevent-core-2.1-7-dbgsym_2.1.12-stable-8+deb12u1_armel.deb
+ df6fdbde48b28d8b203117ee32a06f34 120592 libs optional libevent-core-2.1-7_2.1.12-stable-8+deb12u1_armel.deb
+ 9a73c099fb2d63ee9af50e33ef2a14f1 290148 libdevel optional libevent-dev_2.1.12-stable-8+deb12u1_armel.deb
+ 728ab62718bcaac82b287b5e5aec2147 149088 debug optional libevent-extra-2.1-7-dbgsym_2.1.12-stable-8+deb12u1_armel.deb
+ 92def6a78816574fe03b8bb398635850 99476 libs optional libevent-extra-2.1-7_2.1.12-stable-8+deb12u1_armel.deb
+ cded757b19ff363f3182de228ad43f4a 28144 debug optional libevent-openssl-2.1-7-dbgsym_2.1.12-stable-8+deb12u1_armel.deb
+ 6d8b1786eb8d0da842b203a1b5a3d772 58368 libs optional libevent-openssl-2.1-7_2.1.12-stable-8+deb12u1_armel.deb
+ cdcc728514b92bff37d16d38af637e2d 7432 debug optional libevent-pthreads-2.1-7-dbgsym_2.1.12-stable-8+deb12u1_armel.deb
+ e33024e256e8e4cc04f45413c09af240 53416 libs optional libevent-pthreads-2.1-7_2.1.12-stable-8+deb12u1_armel.deb
+ c0ba00d1f6b14e8c013c75968b97f551 8681 libs optional libevent_2.1.12-stable-8+deb12u1_armel.buildinfo

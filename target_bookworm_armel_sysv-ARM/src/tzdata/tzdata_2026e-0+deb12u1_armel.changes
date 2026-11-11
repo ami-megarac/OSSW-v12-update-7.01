@@ -1,0 +1,31 @@
+Format: 1.8
+Date: Fri, 23 Oct 2026 12:16:23 +0200
+Source: tzdata
+Binary: tzdata
+Architecture: all
+Version: 2026e-0+deb12u1
+Distribution: bookworm-security
+Urgency: medium
+Maintainer: GNU Libc Maintainers <debian-glibc@lists.debian.org>
+Changed-By: Emilio Pozuelo Monfort <pochu@debian.org>
+Description:
+ tzdata     - time zone and daylight-saving time data
+Changes:
+ tzdata (2026e-0+deb12u1) bookworm-security; urgency=medium
+ .
+   * Backport 2026d and 2026e:
+     - Canada’s Northwest Territories moved to permanent -06 on 2026-08-21 and
+       will not fall back from -06 to -07 on 2026-11-01
+     - Manitoba moves to permanent -05 on 2026-10-31 and will not fall back
+       from -05 to -06 on 2026-11-01
+   * Revert POSIX conformance of old SysV names EST5EDT, CST6CDT, MST7MDT and
+     PST8PDT (from Aurelien Jarno)
+Checksums-Sha1:
+ 53998ca3f7effb4178eddd361d51a03181b41cf4 306496 tzdata_2026e-0+deb12u1_all.deb
+ 3bc8a0ad2c4e18dc879d0a25e2716f5e65c79070 5600 tzdata_2026e-0+deb12u1_armel.buildinfo
+Checksums-Sha256:
+ ac306a4def5f43b8b7c36485803eaea952977c5d58b3a4ca75b3ee08e101244c 306496 tzdata_2026e-0+deb12u1_all.deb
+ bbe67b3875196a3355c10bcb5ece78b6d90c157ff87c8e3e8c5bfaff8c51f23e 5600 tzdata_2026e-0+deb12u1_armel.buildinfo
+Files:
+ 1bd37cc9c3e0139964df7d666f6155f5 306496 localization required tzdata_2026e-0+deb12u1_all.deb
+ 1f15c1f20f72c5c4657b06ee67017ded 5600 localization required tzdata_2026e-0+deb12u1_armel.buildinfo

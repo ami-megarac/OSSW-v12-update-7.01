@@ -1,0 +1,37 @@
+Format: 1.8
+Date: Fri, 18 Sep 2026 03:38:16 +0200
+Source: zip
+Binary: zip zip-dbgsym
+Architecture: armel
+Version: 3.0-13+deb12u1
+Distribution: bookworm-security
+Urgency: high
+Maintainer: Santiago Vila <sanvila@debian.org>
+Changed-By: Andreas Henriksson <andreas@fatal.se>
+Description:
+ zip        - Archiver for .zip files
+Closes: 903196 1005943 1077054 1093629 1143866
+Changes:
+ zip (3.0-13+deb12u1) bookworm-security; urgency=high
+ .
+   * Non-maintainer upload by the LTS Team.
+   * Fix buffer overflow when filename contains unicode characters.
+     (Closes: #1077054, #1093629)
+   * Fix buffer overflow when using '-T -TT'.
+     This is CVE-2018-13410. CVE note: Negligible security impact, would
+     involve that a untrusted party controls the -TT value.
+     (Closes: #903196, #1093629)
+   * Fix symlink update detection. (Closes: #1005943)
+   * Fix command injection issue. (Closes: #1143866)
+Checksums-Sha1:
+ b175d6f780bb564b2e1f86b2836391e5bc1fdfdb 424864 zip-dbgsym_3.0-13+deb12u1_armel.deb
+ d5e99ee98ffb23b29091b10db19ff159259f1ba8 5181 zip_3.0-13+deb12u1_armel.buildinfo
+ a48d0a7dc877cac5091559b5c054995f98cadcd5 217364 zip_3.0-13+deb12u1_armel.deb
+Checksums-Sha256:
+ f271403103fe6db00a1df3b8b444bf26904bd668981e818313b39620bb24db9f 424864 zip-dbgsym_3.0-13+deb12u1_armel.deb
+ aeabce6bf64c367afa12bc3c5dbb5cf6cc527dc5510ae784465d0886d61ef79e 5181 zip_3.0-13+deb12u1_armel.buildinfo
+ 4e1c9a5082ec8ce03d1aeaabfb1733891b25fa8a6914a56bc96221fb35b52fba 217364 zip_3.0-13+deb12u1_armel.deb
+Files:
+ f1e95e30bca808956739d81d0b96871d 424864 debug optional zip-dbgsym_3.0-13+deb12u1_armel.deb
+ 8d6c5c5014835250e4bf54e711db528a 5181 utils optional zip_3.0-13+deb12u1_armel.buildinfo
+ 8648ad481dd274e3311f4fcc5a9551e4 217364 utils optional zip_3.0-13+deb12u1_armel.deb

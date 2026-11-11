@@ -1,0 +1,49 @@
+Format: 1.8
+Date: Thu, 24 Sep 2026 13:34:16 -0700
+Source: redis
+Binary: redis redis-sentinel redis-server redis-tools redis-tools-dbgsym
+Architecture: armel all
+Version: 5:7.0.15-1~deb12u10
+Distribution: bookworm-security
+Urgency: high
+Maintainer: Chris Lamb <lamby@debian.org>
+Changed-By: Chris Lamb <lamby@debian.org>
+Description:
+ redis      - Persistent key-value database with network interface (metapackage
+ redis-sentinel - Persistent key-value database with network interface (monitoring)
+ redis-server - Persistent key-value database with network interface
+ redis-tools - Persistent key-value database with network interface (client)
+Closes: 1147423 1148265
+Changes:
+ redis (5:7.0.15-1~deb12u10) bookworm-security; urgency=high
+ .
+   * Non-maintainer upload by the Debian LTS team.
+   * CVE-2026-81934: Prevent a use-after-free vulnerability in the handling of
+     pending TLS data. A remote, unauthenticated attacker may be been able to
+     execute arbitrary commands with the privileges of the Redis server.
+     (Closes: #1147423)
+   * CVE-2026-92925: Prevent an out-of-bounds vulnerability in the handling of
+     cluster ping extensions. This could have allowed a remote attacker to craft a
+     malicious packet, leading to an out-of-bounds read when the packet's
+     payload is processed. (Closes: #1148265)
+Checksums-Sha1:
+ c236494400d96797633aa30f4065fd976f607cd0 35104 redis-sentinel_7.0.15-1~deb12u10_armel.deb
+ 4cd57c21acc2438bfc88467f18e48a9eec83cc61 73908 redis-server_7.0.15-1~deb12u10_armel.deb
+ 5084c8e9b44ae6da51833ba445c98358072c60b1 2591296 redis-tools-dbgsym_7.0.15-1~deb12u10_armel.deb
+ c792c294466b0f049f1b0b2b825e9487b8349822 835256 redis-tools_7.0.15-1~deb12u10_armel.deb
+ f2366289c6d92eb60cabf727270c185ea1c8b0f5 26044 redis_7.0.15-1~deb12u10_all.deb
+ 96fe70199f9a0dfe0f36a711e2fe5bf0dc64e2a5 7035 redis_7.0.15-1~deb12u10_armel.buildinfo
+Checksums-Sha256:
+ ef487aa7eac023a27272b96003863dcaeed727e4a7086001b10283e4634cb350 35104 redis-sentinel_7.0.15-1~deb12u10_armel.deb
+ 8c4d9a30a811841c172bc50d030e2841b8a4e422890214588df23ae84821a6f2 73908 redis-server_7.0.15-1~deb12u10_armel.deb
+ 1cb1bb14483df2d758afe4ced3ea6af47b15ac428263737f89da8b41cc94ae3b 2591296 redis-tools-dbgsym_7.0.15-1~deb12u10_armel.deb
+ 7469bab57f0c46d4864c3a9b1993bd0a025bb977763e1b1c44c79caaaaaba734 835256 redis-tools_7.0.15-1~deb12u10_armel.deb
+ 3a746eb163de50895baf4c4a23e401145de0906b0d12e244a14fc9cce945fed8 26044 redis_7.0.15-1~deb12u10_all.deb
+ 1ff42d024809bfdce7b4f79749723fcb7709ee99cb47369e091864c686ed258b 7035 redis_7.0.15-1~deb12u10_armel.buildinfo
+Files:
+ 439cfad3660c92fbba4bbd970f96ebcf 35104 database optional redis-sentinel_7.0.15-1~deb12u10_armel.deb
+ bc7547f12e2c0a9dbeaa31aa9efc646e 73908 database optional redis-server_7.0.15-1~deb12u10_armel.deb
+ b0931e62f4e56c23b68299de3851db42 2591296 debug optional redis-tools-dbgsym_7.0.15-1~deb12u10_armel.deb
+ 3724572a752d9520b48d2b2d0fcc43c0 835256 database optional redis-tools_7.0.15-1~deb12u10_armel.deb
+ ee5bcfd976a2131b89972a076664eb5d 26044 database optional redis_7.0.15-1~deb12u10_all.deb
+ 0cf804731e4573192583eedfc4a7fc7c 7035 database optional redis_7.0.15-1~deb12u10_armel.buildinfo

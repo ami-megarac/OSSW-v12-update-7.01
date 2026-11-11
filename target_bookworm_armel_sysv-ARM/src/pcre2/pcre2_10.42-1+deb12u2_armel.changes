@@ -1,0 +1,68 @@
+Format: 1.8
+Date: Sat, 03 Oct 2026 15:07:41 +0200
+Source: pcre2
+Binary: libpcre2-16-0 libpcre2-16-0-dbgsym libpcre2-32-0 libpcre2-32-0-dbgsym libpcre2-8-0 libpcre2-8-0-dbgsym libpcre2-8-0-udeb libpcre2-dev libpcre2-posix3 libpcre2-posix3-dbgsym pcre2-utils pcre2-utils-dbgsym
+Architecture: armel
+Version: 10.42-1+deb12u2
+Distribution: bookworm-security
+Urgency: high
+Maintainer: Matthew Vernon <matthew@debian.org>
+Changed-By: Salvatore Bonaccorso <carnil@debian.org>
+Description:
+ libpcre2-16-0 - New Perl Compatible Regular Expression Library - 16 bit runtime f
+ libpcre2-32-0 - New Perl Compatible Regular Expression Library - 32 bit runtime f
+ libpcre2-8-0 - New Perl Compatible Regular Expression Library- 8 bit runtime fil
+ libpcre2-8-0-udeb - New Perl Compatible Regular Expression Library- 8 bit runtime fil (udeb)
+ libpcre2-dev - New Perl Compatible Regular Expression Library - development file
+ libpcre2-posix3 - New Perl Compatible Regular Expression Library - posix-compatible
+ pcre2-utils - New Perl Compatible Regular Expression Library - utilities
+Closes: 1149217
+Changes:
+ pcre2 (10.42-1+deb12u2) bookworm-security; urgency=high
+ .
+   * Non-maintainer upload.
+   * GHSA-r9hj-j2rw-4q3m: Fix large JIT stack allocation (CVE-2026-103111)
+     (Closes: #1149217)
+   * For release, revert platform-specific test case
+Checksums-Sha1:
+ 078fbcc9131824a730dcda5160fa60f7b985d144 572136 libpcre2-16-0-dbgsym_10.42-1+deb12u2_armel.deb
+ 86df72dfb14d620d9275ac1e1a68953c9d45495e 211968 libpcre2-16-0_10.42-1+deb12u2_armel.deb
+ a36117ec54f68c07126f3ae55b98f54d4375cf53 548220 libpcre2-32-0-dbgsym_10.42-1+deb12u2_armel.deb
+ 54a8743f2c0b678c54829688d2e4e22678fd20ee 201112 libpcre2-32-0_10.42-1+deb12u2_armel.deb
+ 1b6e7401aebd9746271a05d35ad935e0b8acdaa6 624832 libpcre2-8-0-dbgsym_10.42-1+deb12u2_armel.deb
+ 014eb41ee8057c1bc2bed8349819ed72a5aef61c 172404 libpcre2-8-0-udeb_10.42-1+deb12u2_armel.udeb
+ 178224010faf92040c19a2bf037c88df42b5e26b 225248 libpcre2-8-0_10.42-1+deb12u2_armel.deb
+ d151edeec0a6abe54be57b0f2042fb53aaea6714 654272 libpcre2-dev_10.42-1+deb12u2_armel.deb
+ 9c0da1e738aeda9aa96287b8925622e635977dfb 6620 libpcre2-posix3-dbgsym_10.42-1+deb12u2_armel.deb
+ d5addee134d78b2feaa25021eb1f6d9dc6a5f46a 55208 libpcre2-posix3_10.42-1+deb12u2_armel.deb
+ 341a01cf0cc20a5c2d00aa26784881adaf49efbe 191804 pcre2-utils-dbgsym_10.42-1+deb12u2_armel.deb
+ 62bcad9f00fd2519fe2991d537ade239a2adc69f 167184 pcre2-utils_10.42-1+deb12u2_armel.deb
+ e29b737ea6f4ed61a4f319085c79012722237817 8322 pcre2_10.42-1+deb12u2_armel.buildinfo
+Checksums-Sha256:
+ 815044f3f74d3a7f51a7d8740c8c438edad2fa73507e8d41439d6cbca2042cd5 572136 libpcre2-16-0-dbgsym_10.42-1+deb12u2_armel.deb
+ f184bfa6a492f25618a7186c2f97fd97746f3e0d74ba39807f2aad5acad62c65 211968 libpcre2-16-0_10.42-1+deb12u2_armel.deb
+ e24694186975c82fbc9bbb7f4226939a4681506d5410698d88efd3817f8f048c 548220 libpcre2-32-0-dbgsym_10.42-1+deb12u2_armel.deb
+ 6b351dd164aa06a7b84d41310ce36fb087742c6cb6b21ef87bd9e7ac516ceff5 201112 libpcre2-32-0_10.42-1+deb12u2_armel.deb
+ a0b706c405472f2d418e6c0d61cfcc78f34527a7e76a8f1ef22221590497a6ce 624832 libpcre2-8-0-dbgsym_10.42-1+deb12u2_armel.deb
+ 181be6c1c50cbfc41d1621c1521bad91ce62f85301cb54945f2787ac90187d80 172404 libpcre2-8-0-udeb_10.42-1+deb12u2_armel.udeb
+ 3ace571f940e4aa0635b540a5425c1ff73795df5d72b8a2026e0e3d8ff19b4fb 225248 libpcre2-8-0_10.42-1+deb12u2_armel.deb
+ 8c9fc76f4bd3d1729f71b98abcb2a21004bcce29175f17c472699317f6819800 654272 libpcre2-dev_10.42-1+deb12u2_armel.deb
+ 610b6395357a06c992f1ffa0d0cf9806626ab004ef296aef96d2325317cbcf86 6620 libpcre2-posix3-dbgsym_10.42-1+deb12u2_armel.deb
+ 746fa32613a9e70a3b5e07b7ee3fb04ab3453cfc362b97655f4580f0558afb48 55208 libpcre2-posix3_10.42-1+deb12u2_armel.deb
+ 1c0d247dcb21e4b5ee4399cc06916553eadedd9bf0945caf1d365288d94562bf 191804 pcre2-utils-dbgsym_10.42-1+deb12u2_armel.deb
+ 498d129faafc3ad1270e743c6fc13a05ef85c01bdace352f6fa6f2027e9075e6 167184 pcre2-utils_10.42-1+deb12u2_armel.deb
+ db2dfbfb8b6c0b923d23e27e14e23e2cfa6177ca8baf73849f522ef8dc195fb5 8322 pcre2_10.42-1+deb12u2_armel.buildinfo
+Files:
+ 57c09196d75ca3b14dc05397b7d824de 572136 debug optional libpcre2-16-0-dbgsym_10.42-1+deb12u2_armel.deb
+ 8674a911c8103d3596dc582fb8acc1c1 211968 libs optional libpcre2-16-0_10.42-1+deb12u2_armel.deb
+ 7d5734053c3eea2594e696144048fe88 548220 debug optional libpcre2-32-0-dbgsym_10.42-1+deb12u2_armel.deb
+ 2437dd258339dc6e1df211b568d6957d 201112 libs optional libpcre2-32-0_10.42-1+deb12u2_armel.deb
+ d30dbde6d3cca3e44495afd9a5cc7afb 624832 debug optional libpcre2-8-0-dbgsym_10.42-1+deb12u2_armel.deb
+ 6950b8928e81fdbf8b0f59c827423191 172404 debian-installer optional libpcre2-8-0-udeb_10.42-1+deb12u2_armel.udeb
+ e431c84c432f9b1b164e3f3b86e7afa7 225248 libs optional libpcre2-8-0_10.42-1+deb12u2_armel.deb
+ 1876abffcfbb25af411605f6524720da 654272 libdevel optional libpcre2-dev_10.42-1+deb12u2_armel.deb
+ 6a5c9a09ec8ea12e16cc88729b1d476b 6620 debug optional libpcre2-posix3-dbgsym_10.42-1+deb12u2_armel.deb
+ cc8e11aa697b55d2182c0d6b12843e3c 55208 libs optional libpcre2-posix3_10.42-1+deb12u2_armel.deb
+ 4f639f75a17d34108b40e89806880332 191804 debug optional pcre2-utils-dbgsym_10.42-1+deb12u2_armel.deb
+ 8abbff030d6e123e6c0b478544f53f2c 167184 utils optional pcre2-utils_10.42-1+deb12u2_armel.deb
+ ee5e2859a9156745d7b96c55b40d8dd4 8322 libs optional pcre2_10.42-1+deb12u2_armel.buildinfo

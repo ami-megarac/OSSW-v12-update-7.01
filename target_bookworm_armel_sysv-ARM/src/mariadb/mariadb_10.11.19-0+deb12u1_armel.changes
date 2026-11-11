@@ -1,0 +1,237 @@
+Format: 1.8
+Date: Fri, 18 Sep 2026 08:08:08 +0000
+Source: mariadb
+Binary: libmariadb-dev libmariadb-dev-compat libmariadb-dev-dbgsym libmariadb3 libmariadb3-dbgsym libmariadbd-dev libmariadbd19 libmariadbd19-dbgsym mariadb-backup mariadb-backup-dbgsym mariadb-client mariadb-client-core mariadb-client-core-dbgsym mariadb-client-dbgsym mariadb-common mariadb-plugin-connect mariadb-plugin-connect-dbgsym mariadb-plugin-cracklib-password-check mariadb-plugin-cracklib-password-check-dbgsym mariadb-plugin-gssapi-client mariadb-plugin-gssapi-client-dbgsym mariadb-plugin-gssapi-server mariadb-plugin-gssapi-server-dbgsym mariadb-plugin-hashicorp-key-management mariadb-plugin-hashicorp-key-management-dbgsym mariadb-plugin-mroonga mariadb-plugin-mroonga-dbgsym mariadb-plugin-oqgraph mariadb-plugin-oqgraph-dbgsym mariadb-plugin-provider-bzip2 mariadb-plugin-provider-bzip2-dbgsym mariadb-plugin-provider-lz4 mariadb-plugin-provider-lz4-dbgsym mariadb-plugin-provider-lzma mariadb-plugin-provider-lzma-dbgsym mariadb-plugin-provider-lzo
+ mariadb-plugin-provider-lzo-dbgsym mariadb-plugin-provider-snappy mariadb-plugin-provider-snappy-dbgsym mariadb-plugin-s3 mariadb-plugin-s3-dbgsym mariadb-plugin-spider mariadb-plugin-spider-dbgsym mariadb-server mariadb-server-10.5 mariadb-server-core mariadb-server-core-dbgsym mariadb-server-dbgsym mariadb-test mariadb-test-data
+ mariadb-test-dbgsym
+Architecture: armel all
+Version: 1:10.11.19-0+deb12u1
+Distribution: bookworm-security
+Urgency: medium
+Maintainer: Debian MySQL Maintainers <pkg-mysql-maint@lists.alioth.debian.org>
+Changed-By: Otto Kekäläinen <otto@debian.org>
+Description:
+ libmariadb-dev - MariaDB database development files
+ libmariadb-dev-compat - MariaDB Connector/C, compatibility symlinks
+ libmariadb3 - MariaDB database client library
+ libmariadbd-dev - MariaDB embedded database, development files
+ libmariadbd19 - MariaDB embedded database, shared library
+ mariadb-backup - Backup tool for MariaDB server
+ mariadb-client - MariaDB database client binaries
+ mariadb-client-core - MariaDB database core client binaries
+ mariadb-common - MariaDB common configuration files
+ mariadb-plugin-connect - Connect storage engine for MariaDB
+ mariadb-plugin-cracklib-password-check - CrackLib Password Validation Plugin for MariaDB
+ mariadb-plugin-gssapi-client - GSSAPI authentication plugin for MariaDB client
+ mariadb-plugin-gssapi-server - GSSAPI authentication plugin for MariaDB server
+ mariadb-plugin-hashicorp-key-management - Hashicorp Key Management plugin for MariaDB
+ mariadb-plugin-mroonga - Mroonga storage engine for MariaDB
+ mariadb-plugin-oqgraph - OQGraph storage engine for MariaDB
+ mariadb-plugin-provider-bzip2 - BZip2 compression support in the server and storage engines
+ mariadb-plugin-provider-lz4 - LZ4 compression support in the server and storage engines
+ mariadb-plugin-provider-lzma - LZMA compression support in the server and storage engines
+ mariadb-plugin-provider-lzo - LZO compression support in the server and storage engines
+ mariadb-plugin-provider-snappy - Snappy compression support in the server and storage engines
+ mariadb-plugin-s3 - Amazon S3 archival storage engine for MariaDB
+ mariadb-plugin-spider - Spider storage engine for MariaDB
+ mariadb-server - MariaDB database server binaries
+ mariadb-server-10.5 - MariaDB database server binaries
+ mariadb-server-core - MariaDB database core server files
+ mariadb-test - MariaDB database regression test suite
+ mariadb-test-data - MariaDB database regression test suite - data files
+Closes: 1139473 1141671 1141976 1144671
+Changes:
+ mariadb (1:10.11.19-0+deb12u1) bookworm-security; urgency=medium
+ .
+   [ Otto Kekäläinen ]
+   * New upstream maintenance 10.11.19 includes several fixes as listed at
+     https://mariadb.com/docs/release-notes/community-server/10.11/10.11.19
+     and fixes for the following CVE tracked security issues:
+     - CVE-2026-61081
+     - CVE-2026-60585
+     - CVE-2026-60331
+     - CVE-2026-60747
+     - CVE-2026-47023
+     - CVE-2026-60184
+   * Update server trace to match new line-wrapping
+   * Skip tests main.mysql_client_test* as they require Internet access
+   * Use Bash as interpreter in script with sh-incompatible syntax
+   * Extend test skip lists after witnessing frequent sporadic failures on armhf
+   * Normalize quick-max-column-width as it differs on 32/64-bit systems
+   * Backport upstream patch to fix CONC-821 (Closes: #1139473, #1141671,
+     #1144671)
+ .
+   [ Luke Yasuda ]
+   * Cherry-pick these changes by Michael Biebl (Closes: #1141976) which are
+     necessary after upstream systemd bugfix in commit 9fa3f51f in 10.11.18:
+     - Install .service files via .install and let
+       dh_installinit/dh_systemd generate the maintscript code
+     - Switch to dh_installsystemd and debhelper compat 13
+     - Drop unnecessary mariadb-server.prerm
+     - Rely on dh_installsystemd to stop the service in postrm
+   * While the above changes are extensive, they are needed to properly handle
+     the systemd service file bugfixes done by upstream in 10.11.17/18. The
+     changes have been in newer Debian versions already for well over two years
+     and have been reviewed by multiple people to be safe for a maintenance
+     release in Debian Bookworm. The change also brings two new systemd files
+     (mariadb-extra.socket and mariadb-extra@.socket) but they are not active by
+     default.
+Checksums-Sha1:
+ 643ae2e225b4e9e3c2f5c7c28e77445975645a57 26448 libmariadb-dev-compat_10.11.19-0+deb12u1_armel.deb
+ bc1d49c0b8df5d7a3701c5a2e82b27b61f5c7644 7724 libmariadb-dev-dbgsym_10.11.19-0+deb12u1_armel.deb
+ 7e04a37c20d87d6b0212ec65c39eaa1b16bb0a49 254140 libmariadb-dev_10.11.19-0+deb12u1_armel.deb
+ bbe42fe62c7047a9f709c6294ebb1dde5ba28167 416364 libmariadb3-dbgsym_10.11.19-0+deb12u1_armel.deb
+ 6d2ff4d01b10089ea4c352937f1dbf98f237b4a2 164252 libmariadb3_10.11.19-0+deb12u1_armel.deb
+ 069bc1794062ac01f931fe000e143d887f00e3c7 6532524 libmariadbd-dev_10.11.19-0+deb12u1_armel.deb
+ ebe9c0c86af298b8dd52455dfa8f14844495801f 62635268 libmariadbd19-dbgsym_10.11.19-0+deb12u1_armel.deb
+ b7f79412e68613e3d7ec93852f733cfe7ac8682b 4555040 libmariadbd19_10.11.19-0+deb12u1_armel.deb
+ 404913819b6a23d280a4e46768ec4d79b66245d8 76100556 mariadb-backup-dbgsym_10.11.19-0+deb12u1_armel.deb
+ e2de847af4b28de1f436fc9d02bd8fd7255397c9 5343084 mariadb-backup_10.11.19-0+deb12u1_armel.deb
+ d144fb85da5e9486a934eb8e4f7bbca2dd14bd25 2561640 mariadb-client-core-dbgsym_10.11.19-0+deb12u1_armel.deb
+ 3bf7e8f4953bca6358a7e84fa69a75b130d93787 759456 mariadb-client-core_10.11.19-0+deb12u1_armel.deb
+ 9c1edd4439eca5975d169a20f10e074ab3a354d8 9593488 mariadb-client-dbgsym_10.11.19-0+deb12u1_armel.deb
+ f41f77fccea8859976547c30325218845c84dc94 2529464 mariadb-client_10.11.19-0+deb12u1_armel.deb
+ f7ae653aabc4f2d45c2baf00d6711685c1ffccf2 27624 mariadb-common_10.11.19-0+deb12u1_all.deb
+ 440a79778f8dc6ceaf00606bdf33b597f278df63 2608788 mariadb-plugin-connect-dbgsym_10.11.19-0+deb12u1_armel.deb
+ 8834a383cafed73f5fbacd7df3bf98b1252067a0 442324 mariadb-plugin-connect_10.11.19-0+deb12u1_armel.deb
+ 1c058718d115c70ad14367d11a300fa2a6937436 5752 mariadb-plugin-cracklib-password-check-dbgsym_10.11.19-0+deb12u1_armel.deb
+ bc637fe9b23b768b276c67d4ce68090750f4141c 28108 mariadb-plugin-cracklib-password-check_10.11.19-0+deb12u1_armel.deb
+ 77348d200e09f8f9dbdb3534442df2f5c1a6e729 21464 mariadb-plugin-gssapi-client-dbgsym_10.11.19-0+deb12u1_armel.deb
+ 5a624d25fc8da769e92760bae6bb2d42ca654d2a 28636 mariadb-plugin-gssapi-client_10.11.19-0+deb12u1_armel.deb
+ d0982037b4b2ec72f75bc939bb2c56420cbc774b 13940 mariadb-plugin-gssapi-server-dbgsym_10.11.19-0+deb12u1_armel.deb
+ d6938075a3cc8d28419a63b818826d50f3192053 30300 mariadb-plugin-gssapi-server_10.11.19-0+deb12u1_armel.deb
+ 70a0d46271a80114a12eac48607b3cb2504e7b46 119000 mariadb-plugin-hashicorp-key-management-dbgsym_10.11.19-0+deb12u1_armel.deb
+ a857ae635b37277d120db72311a148147f45190d 40368 mariadb-plugin-hashicorp-key-management_10.11.19-0+deb12u1_armel.deb
+ 3aab626d4dcccb9dd514bf8e1acf96dedcceae95 4554820 mariadb-plugin-mroonga-dbgsym_10.11.19-0+deb12u1_armel.deb
+ ca4160779e8bd23db8744d28ab677da95a6e1fb2 1034192 mariadb-plugin-mroonga_10.11.19-0+deb12u1_armel.deb
+ af7887e76ea7b84656c9b57c336245fd80e11973 820948 mariadb-plugin-oqgraph-dbgsym_10.11.19-0+deb12u1_armel.deb
+ 4fe71aa3a17da65c74b8786f94572fdb04a45a7d 70584 mariadb-plugin-oqgraph_10.11.19-0+deb12u1_armel.deb
+ aefe386b3f70d8f814ba1c21c12d7813eccfb71c 4624 mariadb-plugin-provider-bzip2-dbgsym_10.11.19-0+deb12u1_armel.deb
+ b8a142b9d4a35dea13c1a312e11f4388f7eeb0b7 28000 mariadb-plugin-provider-bzip2_10.11.19-0+deb12u1_armel.deb
+ 8f233325f718a7c51993fd6c0402c61f195f7f2c 4152 mariadb-plugin-provider-lz4-dbgsym_10.11.19-0+deb12u1_armel.deb
+ f510f4cdf3686da3ad8cc5b73a47312c19dc198b 27928 mariadb-plugin-provider-lz4_10.11.19-0+deb12u1_armel.deb
+ 4a0125c1f070e61407feaabe9707fcda6aa07c74 4788 mariadb-plugin-provider-lzma-dbgsym_10.11.19-0+deb12u1_armel.deb
+ 80fb229a14886e23529ccc30bbfce0b2af2917ba 27968 mariadb-plugin-provider-lzma_10.11.19-0+deb12u1_armel.deb
+ 9cd0849f82d4ce5d4292dddc97a190f833473800 4124 mariadb-plugin-provider-lzo-dbgsym_10.11.19-0+deb12u1_armel.deb
+ 7dacbc379147865263975a8b8038a953f753fd15 27908 mariadb-plugin-provider-lzo_10.11.19-0+deb12u1_armel.deb
+ d1503e67898b4f7c615f5c6bc9db624bc5c86cbd 4364 mariadb-plugin-provider-snappy-dbgsym_10.11.19-0+deb12u1_armel.deb
+ ee81b9d357856614f1ff41f4aba4d942533d8568 27952 mariadb-plugin-provider-snappy_10.11.19-0+deb12u1_armel.deb
+ ad0405d0deced51b7a4d4d79d744bdd2bafdb0eb 1982916 mariadb-plugin-s3-dbgsym_10.11.19-0+deb12u1_armel.deb
+ 9107678eee3733dafb04277db4bb2229bce1de81 765992 mariadb-plugin-s3_10.11.19-0+deb12u1_armel.deb
+ 18db215ab593211cd556a790bd211626eaf1a4b3 3252136 mariadb-plugin-spider-dbgsym_10.11.19-0+deb12u1_armel.deb
+ 795a983b100b9076794f3f258227ba61dd74b4eb 280064 mariadb-plugin-spider_10.11.19-0+deb12u1_armel.deb
+ f77ef6ecb84a146f22d4bd1a37a064dacca93621 26132 mariadb-server-10.5_10.11.19-0+deb12u1_armel.deb
+ 6a9f12865615ec25d07bba94a2ab9e3961993507 75060952 mariadb-server-core-dbgsym_10.11.19-0+deb12u1_armel.deb
+ e3652f6cef2a73159165be7506ae839a77112fd7 6470620 mariadb-server-core_10.11.19-0+deb12u1_armel.deb
+ 6a36410d8854c2830084fb09d565d4a531d044eb 16825136 mariadb-server-dbgsym_10.11.19-0+deb12u1_armel.deb
+ 18c8af423cddc280b840260c5bb7396b3123bdde 3052744 mariadb-server_10.11.19-0+deb12u1_armel.deb
+ 0f441779530d7e1de803334f1191f630a7d54ecd 19127596 mariadb-test-data_10.11.19-0+deb12u1_all.deb
+ 0e5b9417f02587c98537d72a1bafa7599a597944 129190352 mariadb-test-dbgsym_10.11.19-0+deb12u1_armel.deb
+ c5aa79613988b59ca831da9240276901a7d3c125 10813828 mariadb-test_10.11.19-0+deb12u1_armel.deb
+ c89d84367ddd6e8ddedd88eeb2bc16c1364db139 25968 mariadb_10.11.19-0+deb12u1_armel.buildinfo
+Checksums-Sha256:
+ eaf863b6198815f9c3c6fea3823be2cf96bef34620a8fa0ef8462e5894a83bf2 26448 libmariadb-dev-compat_10.11.19-0+deb12u1_armel.deb
+ 292fb8b2850456364b1e8e8acb8c7117029fe2f335bb597470b98f1dfafb977c 7724 libmariadb-dev-dbgsym_10.11.19-0+deb12u1_armel.deb
+ f94892b3ae24a1d5833595052f07493285870ced3ed0e1b1345f11f98efaee74 254140 libmariadb-dev_10.11.19-0+deb12u1_armel.deb
+ eb990804ecc6f1972b8fa6c446de98a7c1aabc91d646ad32b38ddd0a599d65eb 416364 libmariadb3-dbgsym_10.11.19-0+deb12u1_armel.deb
+ ebc83d19d1fc7d85628984fb6edbfc6b2e1f356ea6f0e2ad23652d46f6459bbd 164252 libmariadb3_10.11.19-0+deb12u1_armel.deb
+ 7b07b15c6257aeb280764f239e4466629dc40c67d103492eb840fa7dec604669 6532524 libmariadbd-dev_10.11.19-0+deb12u1_armel.deb
+ b3c882c55fa87fcac6cb6e5d7586bdb099f0aa056eb5af16dd82ab2700c23bed 62635268 libmariadbd19-dbgsym_10.11.19-0+deb12u1_armel.deb
+ 6438403609d7f584862b6c75d4b48c43182198c84da16097af5b41ebef7c1ed2 4555040 libmariadbd19_10.11.19-0+deb12u1_armel.deb
+ e2f242958acac7155cfe3fd055c76981fc07e9be889a992d4d589ee311205611 76100556 mariadb-backup-dbgsym_10.11.19-0+deb12u1_armel.deb
+ 1e53f268956d280c5d36a76bf3e57cf4d4788c1fc8e9ec300c4f7211093bf70c 5343084 mariadb-backup_10.11.19-0+deb12u1_armel.deb
+ ae1a5b3b6b8e1cc6869e65fb0e60f4e5478530c7a24ed6159a076084057669bf 2561640 mariadb-client-core-dbgsym_10.11.19-0+deb12u1_armel.deb
+ cad6a747bbd1a766c0f46919abf3f20f990fcc0da178ab13de0b8eef193544e8 759456 mariadb-client-core_10.11.19-0+deb12u1_armel.deb
+ ecf3a70b565e16276cc3fa3209defb38c186509eea3a5fec5b026949e4586da0 9593488 mariadb-client-dbgsym_10.11.19-0+deb12u1_armel.deb
+ 8dbf0fc2d2ad1d0ffeadf3455f195205d2d9408752ee57f146af523acc8a0cb4 2529464 mariadb-client_10.11.19-0+deb12u1_armel.deb
+ 8312a5cee61770295c48999d24ef7bb53214599eeb28db6c8c43943176be6e5b 27624 mariadb-common_10.11.19-0+deb12u1_all.deb
+ 388e0cb2fa2740658ce490ecb84efc2f6f606666bbc472572ffb6c6148f2be37 2608788 mariadb-plugin-connect-dbgsym_10.11.19-0+deb12u1_armel.deb
+ db625b4326f7de0af7d2387a5b8e50203dbc9cf379e72fecf80a278647a3b893 442324 mariadb-plugin-connect_10.11.19-0+deb12u1_armel.deb
+ 65ad7429cefd3f73bcace5042310725a75ab68d5f2e7fa83d19d4ba2f272074e 5752 mariadb-plugin-cracklib-password-check-dbgsym_10.11.19-0+deb12u1_armel.deb
+ 447069f378f125157dc680ece7e886566e478686916d8d88aabd26dae2cec862 28108 mariadb-plugin-cracklib-password-check_10.11.19-0+deb12u1_armel.deb
+ 00166923f7fe4b18e5e7aa767e9f590c010e5175a9113b2835f02d6cbfe00fc6 21464 mariadb-plugin-gssapi-client-dbgsym_10.11.19-0+deb12u1_armel.deb
+ b9435cafb2a186d1e43947842bc69dfdbfa0771d8cf4a45049833e0750180767 28636 mariadb-plugin-gssapi-client_10.11.19-0+deb12u1_armel.deb
+ 807de8942c4a7b3b6d7923a581fa79864ca77c119ab229a6095b84076b8e3561 13940 mariadb-plugin-gssapi-server-dbgsym_10.11.19-0+deb12u1_armel.deb
+ ed98760c9e5f42d27453374fea2defc6ae1fbfab52527a4842175a00ecae7183 30300 mariadb-plugin-gssapi-server_10.11.19-0+deb12u1_armel.deb
+ 85bd5a7565b612724b512e3b508090617cb6e75adbfcec1790bad2305b9c0229 119000 mariadb-plugin-hashicorp-key-management-dbgsym_10.11.19-0+deb12u1_armel.deb
+ 241b5e8f2bc882005bf9b0e53458c86539de8728ccb6161ea2cb25a43257d306 40368 mariadb-plugin-hashicorp-key-management_10.11.19-0+deb12u1_armel.deb
+ f6d627cb1a1199357a10f57a90ae457ff284f99fd47cbe63e4b8bf27d97d39aa 4554820 mariadb-plugin-mroonga-dbgsym_10.11.19-0+deb12u1_armel.deb
+ 00034b8a3bf4789432a2842d65aad0d511fbe27c113cfb001c56dc37ec22e585 1034192 mariadb-plugin-mroonga_10.11.19-0+deb12u1_armel.deb
+ 7fe0e91bf6582f37ca6f879833933e7ddf4ec714ebab9c67dce929d07354c68c 820948 mariadb-plugin-oqgraph-dbgsym_10.11.19-0+deb12u1_armel.deb
+ eef58964aeff79725a4fbc49329954a6b2f7105d73d548bf5a988312244a311d 70584 mariadb-plugin-oqgraph_10.11.19-0+deb12u1_armel.deb
+ 20be9c806f5723a849f6c5c57f608232872c4aa28de9935aa3322659d9b28652 4624 mariadb-plugin-provider-bzip2-dbgsym_10.11.19-0+deb12u1_armel.deb
+ 7af462cfbf0f28e20deedcf01ed82ec5435164cbf7ea4694dda8e168a30bdc2e 28000 mariadb-plugin-provider-bzip2_10.11.19-0+deb12u1_armel.deb
+ 62ecef8a342123884f477b7ada01e2e340fc9f3b6ef34f9166efee2fcc2654ce 4152 mariadb-plugin-provider-lz4-dbgsym_10.11.19-0+deb12u1_armel.deb
+ 9b4ad95f2e6e24f9562c3520776e3365a888aeabe3953d5c0ddf89a8425aee20 27928 mariadb-plugin-provider-lz4_10.11.19-0+deb12u1_armel.deb
+ b5e8d7154f720ace81b1ca7f14e0f81838be2385538f0cb652748c67a0950f8c 4788 mariadb-plugin-provider-lzma-dbgsym_10.11.19-0+deb12u1_armel.deb
+ f31c84baf890c09fe85eae3728b07a76205967b80ee430cd7aeae95878582511 27968 mariadb-plugin-provider-lzma_10.11.19-0+deb12u1_armel.deb
+ 42b937e120aaea182de1cd428381013e413524570e84cb3f8bdbab41aca38723 4124 mariadb-plugin-provider-lzo-dbgsym_10.11.19-0+deb12u1_armel.deb
+ ff57f026ce0c87b795f7785a2904368e171a1c0d5145af860914089b160d0bf9 27908 mariadb-plugin-provider-lzo_10.11.19-0+deb12u1_armel.deb
+ 9812333ac4d983f0d5b834978dacd053e01f9e573f8f127effbaec05e5962fc5 4364 mariadb-plugin-provider-snappy-dbgsym_10.11.19-0+deb12u1_armel.deb
+ 056785c8bd9904cf29e81ac3c8dabee4e6d503e08952d99640834c1723fdecfb 27952 mariadb-plugin-provider-snappy_10.11.19-0+deb12u1_armel.deb
+ 37c25c729b7a227410318b99a1e69d523aa9f4055588a3fc3fc9a8532e6d8293 1982916 mariadb-plugin-s3-dbgsym_10.11.19-0+deb12u1_armel.deb
+ 6262049b945ff50c454d0449227245a38d9c6baf8d5b681b5be42bcb62300c69 765992 mariadb-plugin-s3_10.11.19-0+deb12u1_armel.deb
+ 82d521e3fb8a84799c1b66ce93a5317bcf65854c2c5d86cb37b9ed66fc5d144f 3252136 mariadb-plugin-spider-dbgsym_10.11.19-0+deb12u1_armel.deb
+ 65672cf30457454a019d3a9d5d7f68964ee8b6f79d9c735574f96e5ae70baa21 280064 mariadb-plugin-spider_10.11.19-0+deb12u1_armel.deb
+ 25be0f564d4eb0ab21980ce4ff37e5d94081ef1ddb20807d485586d0fbe11946 26132 mariadb-server-10.5_10.11.19-0+deb12u1_armel.deb
+ a395f91b286495e47b5266aaa1fb2e05a37d20692251ccc129de0d8efe123cb2 75060952 mariadb-server-core-dbgsym_10.11.19-0+deb12u1_armel.deb
+ d2ab79124152aeb0c72ad0e23f3149aa7bc6029f64de07cc570717837401f485 6470620 mariadb-server-core_10.11.19-0+deb12u1_armel.deb
+ ed7bb5b5f3b6086bef5cdbbdfa74fc1bc5e71778b0d41e5ef95f158340b417b9 16825136 mariadb-server-dbgsym_10.11.19-0+deb12u1_armel.deb
+ 88ccc549a4f0552949a6b9bb65b5999f58eb62af8f9badf0b0f2ce68d0b28517 3052744 mariadb-server_10.11.19-0+deb12u1_armel.deb
+ e54565eb1549db0fdd304b68bd2d707ffd5d1dacec89e635e52c2c0f255ca85e 19127596 mariadb-test-data_10.11.19-0+deb12u1_all.deb
+ 5720174897978fbf99ee2c5b57b38756f4edbb4e4b2df36473ef0c7786c8ee46 129190352 mariadb-test-dbgsym_10.11.19-0+deb12u1_armel.deb
+ 9ef63ce570de90ca4ac292e0800dc72959c21ad70b30b60f1bf248c7bceedc00 10813828 mariadb-test_10.11.19-0+deb12u1_armel.deb
+ eed631eb3b8d2092b3d5c6c35e622b71f1302e7fc42e93bf91d0946dffa00e93 25968 mariadb_10.11.19-0+deb12u1_armel.buildinfo
+Files:
+ 59876549ba103200725d6b4b798981ea 26448 libdevel optional libmariadb-dev-compat_10.11.19-0+deb12u1_armel.deb
+ 165c1684d3aa6e0bd28fb07905038c89 7724 debug optional libmariadb-dev-dbgsym_10.11.19-0+deb12u1_armel.deb
+ f233d9bde378c27a1236118332469d85 254140 libdevel optional libmariadb-dev_10.11.19-0+deb12u1_armel.deb
+ 11f4ce86543777b1b94c5610da9f4d05 416364 debug optional libmariadb3-dbgsym_10.11.19-0+deb12u1_armel.deb
+ 5ae3a9b255ef02b1a6d65315ff00e789 164252 libs optional libmariadb3_10.11.19-0+deb12u1_armel.deb
+ 02f97af97388ebbb8e6d408bfe1d88f2 6532524 libdevel optional libmariadbd-dev_10.11.19-0+deb12u1_armel.deb
+ f8934cacdf2b89070f519ad7cfd9c45d 62635268 debug optional libmariadbd19-dbgsym_10.11.19-0+deb12u1_armel.deb
+ d653b9e557f530b6ee1b7a608e35592c 4555040 libs optional libmariadbd19_10.11.19-0+deb12u1_armel.deb
+ e5e361fe0548b595f519c3a121932fdc 76100556 debug optional mariadb-backup-dbgsym_10.11.19-0+deb12u1_armel.deb
+ 82776db1577d5b7651826a8a4fb58b46 5343084 database optional mariadb-backup_10.11.19-0+deb12u1_armel.deb
+ cb28326c016e761fdef2171c75cdf655 2561640 debug optional mariadb-client-core-dbgsym_10.11.19-0+deb12u1_armel.deb
+ 982ef667bd4676e58d0af8b077cacd93 759456 database optional mariadb-client-core_10.11.19-0+deb12u1_armel.deb
+ c7ff03f2c4e9a1cfa0a0c8242810edb6 9593488 debug optional mariadb-client-dbgsym_10.11.19-0+deb12u1_armel.deb
+ 66f2241abcaae4e3f0e43df561082e2c 2529464 database optional mariadb-client_10.11.19-0+deb12u1_armel.deb
+ c3bf53372919deb2558f1b3f078938e1 27624 database optional mariadb-common_10.11.19-0+deb12u1_all.deb
+ 651387a1b5db91a8b63833d0616a7957 2608788 debug optional mariadb-plugin-connect-dbgsym_10.11.19-0+deb12u1_armel.deb
+ b7e37f5fa8e95a6a380099e92490601f 442324 database optional mariadb-plugin-connect_10.11.19-0+deb12u1_armel.deb
+ 669b431eb94452cefdfcc0827265d573 5752 debug optional mariadb-plugin-cracklib-password-check-dbgsym_10.11.19-0+deb12u1_armel.deb
+ 32a04ce34bbcf0b872afa998d5f5e62c 28108 database optional mariadb-plugin-cracklib-password-check_10.11.19-0+deb12u1_armel.deb
+ 497e9af6eafb33fa5d21a55e1f1db39c 21464 debug optional mariadb-plugin-gssapi-client-dbgsym_10.11.19-0+deb12u1_armel.deb
+ a06e56a3e5aeb78972205263e4da33af 28636 database optional mariadb-plugin-gssapi-client_10.11.19-0+deb12u1_armel.deb
+ c6444ad4bea9b1eea4a6f2c73661637b 13940 debug optional mariadb-plugin-gssapi-server-dbgsym_10.11.19-0+deb12u1_armel.deb
+ e568e0723b9a04ce26fd58d5e08b7d87 30300 database optional mariadb-plugin-gssapi-server_10.11.19-0+deb12u1_armel.deb
+ c3ff466df6fe43c430ba026252309345 119000 debug optional mariadb-plugin-hashicorp-key-management-dbgsym_10.11.19-0+deb12u1_armel.deb
+ 890bb4ea6ec1dd2c82e04bb8c91f85a9 40368 database optional mariadb-plugin-hashicorp-key-management_10.11.19-0+deb12u1_armel.deb
+ 0d93f0562e24b9471015d6113ce532fa 4554820 debug optional mariadb-plugin-mroonga-dbgsym_10.11.19-0+deb12u1_armel.deb
+ da8783f525348bf609c78f7f65720848 1034192 database optional mariadb-plugin-mroonga_10.11.19-0+deb12u1_armel.deb
+ 014ba2d6e9532a53192f655f542ef53a 820948 debug optional mariadb-plugin-oqgraph-dbgsym_10.11.19-0+deb12u1_armel.deb
+ 979ec133b0c4f018260cf011262386c3 70584 database optional mariadb-plugin-oqgraph_10.11.19-0+deb12u1_armel.deb
+ 1dfe0e600ee5524ca51d9f54652424e5 4624 debug optional mariadb-plugin-provider-bzip2-dbgsym_10.11.19-0+deb12u1_armel.deb
+ f60126f9590276ee8bd5c8be416baa06 28000 database optional mariadb-plugin-provider-bzip2_10.11.19-0+deb12u1_armel.deb
+ c3c150fb0868a4dd0b73a50be84c5c7e 4152 debug optional mariadb-plugin-provider-lz4-dbgsym_10.11.19-0+deb12u1_armel.deb
+ b88af8de50dd582b7f3a4e5ca8da371d 27928 database optional mariadb-plugin-provider-lz4_10.11.19-0+deb12u1_armel.deb
+ 4cd31cc1d454760419a5c49133186a3f 4788 debug optional mariadb-plugin-provider-lzma-dbgsym_10.11.19-0+deb12u1_armel.deb
+ 56e80483a7f98a26e5bdbd6f0452e770 27968 database optional mariadb-plugin-provider-lzma_10.11.19-0+deb12u1_armel.deb
+ 6aa4a5bb215f712f67c4f900c4607ffb 4124 debug optional mariadb-plugin-provider-lzo-dbgsym_10.11.19-0+deb12u1_armel.deb
+ 9aca2a34193677af6baa91214ef53fab 27908 database optional mariadb-plugin-provider-lzo_10.11.19-0+deb12u1_armel.deb
+ 7e34316d6bc8b7cd88d4f42442a65014 4364 debug optional mariadb-plugin-provider-snappy-dbgsym_10.11.19-0+deb12u1_armel.deb
+ f2ad4ad5c0e3dca9a41d8595b4af7533 27952 database optional mariadb-plugin-provider-snappy_10.11.19-0+deb12u1_armel.deb
+ e391bb6ebd098b1ef6f14e52f938b206 1982916 debug optional mariadb-plugin-s3-dbgsym_10.11.19-0+deb12u1_armel.deb
+ 068554c53e6671a4f48ccefdafaabdda 765992 database optional mariadb-plugin-s3_10.11.19-0+deb12u1_armel.deb
+ 78af1e865733d0f82174860656fca8cf 3252136 debug optional mariadb-plugin-spider-dbgsym_10.11.19-0+deb12u1_armel.deb
+ 5788936391a1ad3471dc14aa956ec0fa 280064 database optional mariadb-plugin-spider_10.11.19-0+deb12u1_armel.deb
+ 901eb5fa677aac7b6a6e39a5f5c3c0be 26132 oldlibs optional mariadb-server-10.5_10.11.19-0+deb12u1_armel.deb
+ bb83181388e6cf830fd3a82cc1f990cb 75060952 debug optional mariadb-server-core-dbgsym_10.11.19-0+deb12u1_armel.deb
+ 910eadc445d57ff75ff5dfec9b29c9bd 6470620 database optional mariadb-server-core_10.11.19-0+deb12u1_armel.deb
+ ee5e6a7e992a0f3f0bae991e232a20e8 16825136 debug optional mariadb-server-dbgsym_10.11.19-0+deb12u1_armel.deb
+ 6c69a471a4ad2d15dfa2373edd68d0f7 3052744 database optional mariadb-server_10.11.19-0+deb12u1_armel.deb
+ ebe347b55452c09d27d0e1464b8342ea 19127596 database optional mariadb-test-data_10.11.19-0+deb12u1_all.deb
+ 814d0a538ac7c4aeada2368cda1858a6 129190352 debug optional mariadb-test-dbgsym_10.11.19-0+deb12u1_armel.deb
+ e3ec7c6b1b5d01d581da2dcf3f20f44e 10813828 database optional mariadb-test_10.11.19-0+deb12u1_armel.deb
+ 5f03ffdd72a6f99d42275067db2bbfb1 25968 database optional mariadb_10.11.19-0+deb12u1_armel.buildinfo

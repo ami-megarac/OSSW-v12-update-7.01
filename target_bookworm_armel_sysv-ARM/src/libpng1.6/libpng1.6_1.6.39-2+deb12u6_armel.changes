@@ -1,0 +1,45 @@
+Format: 1.8
+Date: Mon, 05 Oct 2026 10:56:53 +0530
+Source: libpng1.6
+Binary: libpng-dev libpng-tools libpng-tools-dbgsym libpng16-16 libpng16-16-dbgsym libpng16-16-udeb
+Architecture: armel
+Version: 1.6.39-2+deb12u6
+Distribution: bookworm-security
+Urgency: medium
+Maintainer: Maintainers of libpng1.6 packages <libpng1.6@packages.debian.org>
+Changed-By: Utkarsh Gupta <utkarsh@debian.org>
+Description:
+ libpng-dev - PNG library - development (version 1.6)
+ libpng-tools - PNG library - tools (version 1.6)
+ libpng16-16 - PNG library - runtime (version 1.6)
+ libpng16-16-udeb - PNG library - minimal runtime library (version 1.6) (udeb)
+Changes:
+ libpng1.6 (1.6.39-2+deb12u6) bookworm-security; urgency=medium
+ .
+   * Non-maintainer upload by the LTS Team.
+   * Fix CVE-2026-46675: use-after-free of zlib input in png_read_end()
+     after incomplete zTXt, iTXt or iCCP decompression.
+Checksums-Sha1:
+ 1e65368257d458ecc3de7586f28194412ecdb03c 345056 libpng-dev_1.6.39-2+deb12u6_armel.deb
+ 90e9b68172d66e66a36c85cbbc3600310def36ee 47612 libpng-tools-dbgsym_1.6.39-2+deb12u6_armel.deb
+ 17245c204b506afc6968bcdea4db08b3074f284a 125212 libpng-tools_1.6.39-2+deb12u6_armel.deb
+ 50f94876645d6dff79cb18f82a2291b565d98949 6487 libpng1.6_1.6.39-2+deb12u6_armel.buildinfo
+ 8a2688ce9e7effda57bc82793382d5ed3b0402d8 245772 libpng16-16-dbgsym_1.6.39-2+deb12u6_armel.deb
+ c1eca8b9ff6dc9bdff5f80f62d4325a39e676335 78744 libpng16-16-udeb_1.6.39-2+deb12u6_armel.udeb
+ 1525f6c04a004d44244bec2938c6b59ad76c55d1 262636 libpng16-16_1.6.39-2+deb12u6_armel.deb
+Checksums-Sha256:
+ dc16948de5f1582261ff656facd29650386f97f690e5ffe607f47db3c77fe142 345056 libpng-dev_1.6.39-2+deb12u6_armel.deb
+ 6df98ece569feaed4835d803d06fc9650514dfc754cc20cc9b2c4556fc31c3e0 47612 libpng-tools-dbgsym_1.6.39-2+deb12u6_armel.deb
+ 3e784327eba7858805a4c8d13f601830f0c459c5b21ce2c0a0e8dc1e59995fde 125212 libpng-tools_1.6.39-2+deb12u6_armel.deb
+ 51da5329208a469e5e5f04ce999afde227d843bff2e57280f63bf04370eae8cc 6487 libpng1.6_1.6.39-2+deb12u6_armel.buildinfo
+ 070961a502318641ede75d1efaede7260e3c5d42cf987c7fa125f3c796fbcb6f 245772 libpng16-16-dbgsym_1.6.39-2+deb12u6_armel.deb
+ ed7bdbd259c207d919ac046bd20e60a00655d1c0890dcd321124c4a7f75c0ca0 78744 libpng16-16-udeb_1.6.39-2+deb12u6_armel.udeb
+ f3cf954350385505dbdf0ca16ab628a12d20a7e749a08b1c1b48e361e20bb2cf 262636 libpng16-16_1.6.39-2+deb12u6_armel.deb
+Files:
+ 568a62120864f83dea2a453f791fd98b 345056 libdevel optional libpng-dev_1.6.39-2+deb12u6_armel.deb
+ cca7ca650362a1f13f24706fd572efca 47612 debug optional libpng-tools-dbgsym_1.6.39-2+deb12u6_armel.deb
+ 8b8774cb12f7cd9e555e0ecb7b6c598e 125212 libdevel optional libpng-tools_1.6.39-2+deb12u6_armel.deb
+ 699e5b889401e3099644ba727b292750 6487 libs optional libpng1.6_1.6.39-2+deb12u6_armel.buildinfo
+ 96bd3081a5d76f22b1d7b52391cc80f2 245772 debug optional libpng16-16-dbgsym_1.6.39-2+deb12u6_armel.deb
+ 29bc75a4b662af7abf55f56e474c07ac 78744 debian-installer optional libpng16-16-udeb_1.6.39-2+deb12u6_armel.udeb
+ 0084f876cc7f638c8d1cd7f277643c75 262636 libs optional libpng16-16_1.6.39-2+deb12u6_armel.deb

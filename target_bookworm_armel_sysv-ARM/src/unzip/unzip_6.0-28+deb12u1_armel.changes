@@ -1,0 +1,35 @@
+Format: 1.8
+Date: Sun, 16 Aug 2026 15:50:52 +0200
+Source: unzip
+Binary: unzip unzip-dbgsym
+Architecture: armel
+Version: 6.0-28+deb12u1
+Distribution: bookworm-security
+Urgency: medium
+Maintainer: Santiago Vila <sanvila@debian.org>
+Changed-By: Andrej Shadura <andrewsh@debian.org>
+Description:
+ unzip      - De-archiver for .zip files
+Closes: 1142904 1142905 1142906
+Changes:
+ unzip (6.0-28+deb12u1) bookworm-security; urgency=medium
+ .
+   * Non-maintainer upload by the Debian LTS team.
+   * Apply upstream fix for CAN-2026-2034440. Closes: #1142904.
+     (heap out-of-bounds read in EF_IZUNIX3 extra field handler)
+   * Apply upstream fix for CAN-2026-2034442. Closes: #1142906.
+     (heap buffer overflow WRITE in memextract() STORED path)
+   * Apply upstream fix for CAN-2026-2034443. Closes: #1142905.
+     (stack out-of-bounds NUL write in EF_SMARTZIP handler)
+Checksums-Sha1:
+ 06a4d2b84a75f9a9e79ab4f90ad290edc4d75d81 258828 unzip-dbgsym_6.0-28+deb12u1_armel.deb
+ c69e7517c4fe756f8e1fd41971dff31da85f1084 5302 unzip_6.0-28+deb12u1_armel.buildinfo
+ d75f678d584f423f2199c2b9170fd943cc7b0d11 151192 unzip_6.0-28+deb12u1_armel.deb
+Checksums-Sha256:
+ 5a94ccc2bcac1cc81064b1b5183bebe84f219c762b787ebf1ddccac47c4159b5 258828 unzip-dbgsym_6.0-28+deb12u1_armel.deb
+ ca679006578530e7f9998eed0cd2996acb32dce8d30ef1c6d453c46e9f29fd52 5302 unzip_6.0-28+deb12u1_armel.buildinfo
+ 99c4746d31fe29b92d7cbe02e93f37ee5f6bec876a741c132dea0c4dc7072054 151192 unzip_6.0-28+deb12u1_armel.deb
+Files:
+ e6c967c22af390ca68fb07fe269ed312 258828 debug optional unzip-dbgsym_6.0-28+deb12u1_armel.deb
+ 0cbf372b40785fd4b47ef237561ad73f 5302 utils optional unzip_6.0-28+deb12u1_armel.buildinfo
+ 56ebba67f8de515d384f19c14460b2fe 151192 utils optional unzip_6.0-28+deb12u1_armel.deb

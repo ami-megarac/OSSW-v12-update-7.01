@@ -1,0 +1,54 @@
+Format: 1.8
+Date: Sun, 13 Sep 2026 01:01:01 +0000
+Source: xz-utils
+Binary: liblzma-dev liblzma-doc liblzma5 liblzma5-dbgsym xz-utils xz-utils-dbgsym xzdec xzdec-dbgsym
+Architecture: armel all
+Version: 5.4.1-1+deb12u2
+Distribution: bookworm-security
+Urgency: medium
+Maintainer: Sebastian Andrzej Siewior <sebastian@breakpoint.cc>
+Changed-By: Otto Kekäläinen <otto@debian.org>
+Description:
+ liblzma-dev - XZ-format compression library - development files
+ liblzma-doc - XZ-format compression library - API documentation
+ liblzma5   - XZ-format compression library
+ xz-utils   - XZ-format compression utilities
+ xzdec      - XZ-format compression utilities - tiny decompressors
+Closes: 1147318
+Changes:
+ xz-utils (5.4.1-1+deb12u2) bookworm-security; urgency=medium
+ .
+   * Add upstream v5.4 commits to fix security issues:
+     - See notes https://github.com/tukaani-project/xz/releases/tag/v5.8.4
+       about latest maintained version, also mentioning v5.4 branch status
+     - Includes security fix for GHSA-5qpq-xqfv-j9pg (Closes: #1147318)
+Checksums-Sha1:
+ 3b814e88c98469ecd28df65c0b51ef404f3d7d70 249576 liblzma-dev_5.4.1-1+deb12u2_armel.deb
+ b98d2cbe350cf6dfa4f220974fb8d3b7713e7edf 430928 liblzma-doc_5.4.1-1+deb12u2_all.deb
+ 88d64ea977de6a4fe561eaccc70447105543a935 245256 liblzma5-dbgsym_5.4.1-1+deb12u2_armel.deb
+ 778fe47688af94ad58263fb568bd845a7e7eaa3d 194012 liblzma5_5.4.1-1+deb12u2_armel.deb
+ dd92354863f62c7f63e4739c949f91c7bbd7e4a4 88728 xz-utils-dbgsym_5.4.1-1+deb12u2_armel.deb
+ cb3e4ca8fc3a8adbbcc366f9920bf5d92f21674c 7420 xz-utils_5.4.1-1+deb12u2_armel.buildinfo
+ 883b500b53247478aa14ea1b6804369ebd5f3976 470056 xz-utils_5.4.1-1+deb12u2_armel.deb
+ 317c37a759b05e3b1b726545873b637796689da4 107344 xzdec-dbgsym_5.4.1-1+deb12u2_armel.deb
+ abd8cc7bc9e6b962b97f31697150dde58fe6cb06 154272 xzdec_5.4.1-1+deb12u2_armel.deb
+Checksums-Sha256:
+ 4961079e5930d3676dd85ff6221fed9b4f69217e018cf3acba3a297705b1b869 249576 liblzma-dev_5.4.1-1+deb12u2_armel.deb
+ 621bdb9702b894a78bc6f6e3834036da61631e864b1f61ae37592dcd82b80d8f 430928 liblzma-doc_5.4.1-1+deb12u2_all.deb
+ 1a76a0d5afb704a414fed03ad04d0a02cc5d74598609e44b0b1b3a635f287c03 245256 liblzma5-dbgsym_5.4.1-1+deb12u2_armel.deb
+ f1cac22b301bfed6dee98da97f55f0801504c642869b5e6890a979749d5307f7 194012 liblzma5_5.4.1-1+deb12u2_armel.deb
+ 5ea79bd5760bb751f9aef258640feb8ae7f296ca65fef5d06a4fc13d798500e9 88728 xz-utils-dbgsym_5.4.1-1+deb12u2_armel.deb
+ b47eecfe9f7960ed2d6ac4d158148798e89faaa3b66f763770878fe86ffe0f3c 7420 xz-utils_5.4.1-1+deb12u2_armel.buildinfo
+ fb9bf7ece99fb57d9259114242a0f32d060e3df651de4bfca955ce51af9c96d3 470056 xz-utils_5.4.1-1+deb12u2_armel.deb
+ 7dfc83b696b20f8c97c569db176f0705311021bd71aec5bad931cd9e48f37191 107344 xzdec-dbgsym_5.4.1-1+deb12u2_armel.deb
+ 707b6710eed06458ede48b1a0ddff9644242f535c8022c2b1731ee702f405f73 154272 xzdec_5.4.1-1+deb12u2_armel.deb
+Files:
+ b3e58240ed4922ce747107fbde135c4b 249576 libdevel optional liblzma-dev_5.4.1-1+deb12u2_armel.deb
+ fc7ce80ae6c268fd52e8a3d926cd81f4 430928 doc optional liblzma-doc_5.4.1-1+deb12u2_all.deb
+ 477a4e147b339eee663597c8dfbdad41 245256 debug optional liblzma5-dbgsym_5.4.1-1+deb12u2_armel.deb
+ 6bfc5a2b8ad6c6b4a0849fa68c81ba8a 194012 libs optional liblzma5_5.4.1-1+deb12u2_armel.deb
+ 10c89330e6752dec40fc71c048aaf41f 88728 debug optional xz-utils-dbgsym_5.4.1-1+deb12u2_armel.deb
+ 16c490185d245e516cc2dd8436ad7bbc 7420 utils optional xz-utils_5.4.1-1+deb12u2_armel.buildinfo
+ 6540f1c0412a87214de1c77a052081f0 470056 utils standard xz-utils_5.4.1-1+deb12u2_armel.deb
+ 62caa936d07037f179d43879edf64994 107344 debug optional xzdec-dbgsym_5.4.1-1+deb12u2_armel.deb
+ fde9811ea09acda0cc8fd37d8124ed89 154272 utils optional xzdec_5.4.1-1+deb12u2_armel.deb
